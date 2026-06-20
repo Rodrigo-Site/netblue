@@ -45,7 +45,7 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--card-border);
             z-index: 1000;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
 
         .navbar-container {
@@ -54,7 +54,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100px;
+            height: 90px;
         }
 
         .logo {
@@ -576,7 +576,7 @@
         @media (max-width: 1024px) {
             .nav-menu {
                 position: fixed;
-                top: 70px;
+                top: 90px;
                 left: 0;
                 right: 0;
                 bottom: 0;
@@ -726,3 +726,112 @@
         .scroll-top:hover {
             transform: translateY(-3px);
         }
+        /* ==========================================
+   RESPONSIVIDADE PROFISSIONAL NAVBAR
+========================================== */
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .navbar-container {
+        height: 90px;
+    }
+
+    .nav-menu {
+        top: 90px;
+    }
+
+    .logo-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .logo-text {
+        font-size: 1.15rem;
+    }
+
+    .dropdown-item {
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 0.8rem;
+    }
+
+    .navbar-container {
+        height: 80px;
+    }
+
+    .nav-menu {
+        top: 80px;
+        padding: 1rem;
+    }
+
+    .logo-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 14px 0;
+    }
+
+    .dropdown-item {
+        font-size: 0.9rem;
+        padding: 10px 0 10px 20px;
+    }
+
+    .mobile-toggle {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navbar-container {
+        height: 75px;
+    }
+
+    .nav-menu {
+        top: 75px;
+    }
+
+    .logo-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .logo-text {
+        font-size: 0.95rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .dropdown-item {
+        font-size: 0.85rem;
+    }
+
+    .mobile-toggle span {
+        width: 22px;
+    }
+}
