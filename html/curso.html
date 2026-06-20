@@ -1,0 +1,2895 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Redes de Computadores | Aprenda do Zero</title>
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <link rel="stylesheet" href="curso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../Html/index.html" class="logo">
+                <div class="logo-icon">
+                    <img src="Image/logo.png" alt="Logo do Curso de Redes de Computadores" class="logo-img">
+                </div>
+                <div class="logo-text">Net<span>Blue</span></div>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#hero" class="nav-link">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-satellite-dish"></i> Fundamentos
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#teoria-geral" class="dropdown-item">
+                            <i class="fas fa-book"></i> Teoria Geral das Redes
+                        </a>
+                        <a href="#redes-lan" class="dropdown-item">
+                            <i class="fas fa-building"></i> Redes Locais (LAN)
+                        </a>
+                        <a href="#modelo-osi" class="dropdown-item">
+                            <i class="fas fa-layer-group"></i> Modelo OSI
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-database"></i> Dados e Comunicação
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#transmissao-dados" class="dropdown-item">
+                            <i class="fas fa-exchange-alt"></i> Transmissão de Dados
+                        </a>
+                        <a href="#ping-ipconfig" class="dropdown-item">
+                            <i class="fas fa-terminal"></i> Ping e ipconfig
+                        </a>
+                        <a href="#tcp-ip-dns" class="dropdown-item">
+                            <i class="fas fa-project-diagram"></i> TCP / IP / DNS / Gateway
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cogs"></i> Configuração
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#config-switches" class="dropdown-item">
+                            <i class="fas fa-server"></i> Configuração de Switches
+                        </a>
+                        <a href="#roteamento" class="dropdown-item">
+                            <i class="fas fa-route"></i> Roteamento
+                        </a>
+                        <a href="#tabelas-roteamento" class="dropdown-item">
+                            <i class="fas fa-table"></i> Tabelas de Roteamento
+                        </a>
+                        <a href="#interfaces-rede" class="dropdown-item">
+                            <i class="fas fa-ethernet"></i> Interfaces de Rede
+                        </a>
+                        <a href="#comandos-config" class="dropdown-item">
+                            <i class="fas fa-keyboard"></i> Comandos Básicos
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-plug"></i> Infraestrutura
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#cabeamento" class="dropdown-item">
+                            <i class="fas fa-project-diagram"></i> Cabeamento Estruturado
+                        </a>
+                        <a href="#fibra-optica" class="dropdown-item">
+                            <i class="fas fa-bolt"></i> Fibra Óptica
+                        </a>
+                        <a href="#crimpagem" class="dropdown-item">
+                            <i class="fas fa-tools"></i> Crimpagem de Cabo
+                        </a>
+                        <a href="#t568a" class="dropdown-item">
+                            <i class="fas fa-palette"></i> Padrão T568A
+                        </a>
+                        <a href="#t568b" class="dropdown-item">
+                            <i class="fas fa-palette"></i> Padrão T568B
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-globe"></i> Endereçamento IP
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#classes-ip" class="dropdown-item">
+                            <i class="fas fa-sitemap"></i> Classes de Endereçamento
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-wifi"></i> Redes Sem Fio
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#conceito-wifi" class="dropdown-item">
+                            <i class="fas fa-broadcast-tower"></i> Conceito de Wi-Fi
+                        </a>
+                        <a href="#ondas-eletromagneticas" class="dropdown-item">
+                            <i class="fas fa-wave-square"></i> Ondas Eletromagnéticas
+                        </a>
+                        <a href="#tipos-rede-sem-fio" class="dropdown-item">
+                            <i class="fas fa-th-list"></i> Tipos de Rede Sem Fio
+                        </a>
+                        <a href="#topologia-sem-fio" class="dropdown-item">
+                            <i class="fas fa-project-diagram"></i> Topologia Sem Fio
+                        </a>
+                        <a href="#arquitetura-sem-fio" class="dropdown-item">
+                            <i class="fas fa-cubes"></i> Arquitetura Sem Fio
+                        </a>
+                        <a href="#config-sem-fio" class="dropdown-item">
+                            <i class="fas fa-sliders-h"></i> Configuração Sem Fio
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="../Html/quiz.html" class="nav-link">
+                        <i class="fas fa-flask"></i> Quiz
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-graduation-cap"></i>
+                Curso Completo e Gratuito
+            </div>
+            <h1>Domine <span>Redes de Computadores</span> do Zero</h1>
+            <p>Aprenda desde os fundamentos até configurações avançadas com explicações didáticas, exemplos práticos e quiz interativo.</p>
+            <div class="hero-buttons">
+                <a href="#teoria-geral" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Começar Agora
+                </a>
+                <a href="#quiz" class="btn btn-secondary">
+                    <i class="fas fa-flask"></i> Testar Conhecimentos
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Tópicos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Módulos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Questões Quiz</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- ==================== MÓDULO: FUNDAMENTOS ==================== -->
+<br><br><br>
+        <section class="section" id="fundamentos">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Fundamentos de Redes</h2>
+                    <p class="section-subtitle">Base essencial para compreender redes de computadores</p>
+                </div>
+            </div>
+
+            <!-- Teoria Geral das Redes -->
+            <div class="card" id="teoria-geral">
+                <h2 class="card-title">
+                    <i class="fas fa-book"></i>
+                    Teoria Geral das Redes
+                </h2>
+
+                <h3>🧠 O que é uma Rede de Computadores?</h3>
+                <p>Uma <strong>rede de computadores</strong> é um conjunto de dispositivos eletrônicos (computadores, smartphones, servidores, impressoras, etc.) conectados entre si com o objetivo de <strong>compartilhar recursos, dados e informações</strong>.</p>
+
+                <p>Imagine uma empresa com 50 funcionários. Sem uma rede, cada computador precisaria de sua própria impressora, cada arquivo teria que ser copiado via pen drive, e a comunicação seria extremamente lenta. Com uma rede, todos compartilham a mesma impressora, acessam arquivos de um servidor central e se comunicam instantaneamente.</p>
+
+                <h3>Por que as redes existem?</h3>
+                <p>As redes surgiram para resolver problemas fundamentais:</p>
+                <ul>
+                    <li><strong>Compartilhamento de recursos:</strong> Impressoras, arquivos, conexão à internet</li>
+                    <li><strong>Comunicação:</strong> E-mail, videoconferência, mensagens instantâneas</li>
+                    <li><strong>Centralização:</strong> Dados armazenados em um local seguro e acessível</li>
+                    <li><strong>Economia:</strong> Menos equipamentos duplicados, menor custo operacional</li>
+                    <li><strong>Colaboração:</strong> Múltiplas pessoas trabalhando no mesmo projeto simultaneamente</li>
+                </ul>
+
+                <h3>Componentes Fundamentais de uma Rede</h3>
+                <h4>1. Dispositivos Finais (End Devices)</h4>
+                <p>São os equipamentos que os usuários utilizam diretamente: computadores, notebooks, smartphones, tablets, impressoras de rede, servidores. Eles são a "ponta" da comunicação.</p>
+
+                <h4>2. Dispositivos de Rede (Network Devices)</h4>
+                <p>São equipamentos que permitem a conexão e o gerenciamento do tráfego:</p>
+                <ul>
+                    <li><strong>Switch:</strong> Conecta múltiplos dispositivos em uma rede local</li>
+                    <li><strong>Roteador (Router):</strong> Conecta diferentes redes e direciona o tráfego</li>
+                    <li><strong>Access Point:</strong> Permite conexões sem fio (Wi-Fi)</li>
+                    <li><strong>Modem:</strong> Converte sinais para comunicação com a operadora</li>
+                </ul>
+
+                <h4>3. Meios de Transmissão</h4>
+                <p>São os "caminhos" por onde os dados trafegam:</p>
+                <ul>
+                    <li><strong>Cabo de par trançado (UTP/STP):</strong> O mais comum em redes locais</li>
+                    <li><strong>Fibra óptica:</strong> Alta velocidade, usado em backbones e longas distâncias</li>
+                    <li><strong>Ondas de rádio:</strong> Wi-Fi, Bluetooth, redes celulares</li>
+                </ul>
+
+                <h4>4. Protocolos</h4>
+                <p>São as "regras de comunicação" que todos os dispositivos seguem. Assim como humanos precisam falar a mesma língua para se entender, dispositivos precisam usar os mesmos protocolos. Exemplos: TCP/IP, HTTP, FTP, DNS.</p>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Pense na rede da sua casa: seu smartphone (dispositivo final) conecta-se ao roteador Wi-Fi (dispositivo de rede) através de ondas de rádio (meio de transmissão). O roteador usa o protocolo TCP/IP para enviar sua requisição ao servidor do Google quando você faz uma pesquisa.</p>
+                </div>
+
+                <h3>Tipos de Redes por Abrangência</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Nome</th>
+                            <th>Abrangência</th>
+                            <th>Exemplo</th>
+                        </tr>
+                        <tr>
+                            <td><strong>PAN</strong></td>
+                            <td>Personal Area Network</td>
+                            <td>Poucos metros</td>
+                            <td>Bluetooth entre celular e fone</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LAN</strong></td>
+                            <td>Local Area Network</td>
+                            <td>Edifício/Campus</td>
+                            <td>Rede de um escritório</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MAN</strong></td>
+                            <td>Metropolitan Area Network</td>
+                            <td>Cidade</td>
+                            <td>Rede de uma universidade com vários campi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WAN</strong></td>
+                            <td>Wide Area Network</td>
+                            <td>País/Continente/Mundo</td>
+                            <td>Internet</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Uma rede de computadores conecta dispositivos para compartilhar recursos e comunicação. É composta por dispositivos finais (o que usamos), dispositivos de rede (que gerenciam o tráfego), meios de transmissão (cabos ou ondas) e protocolos (regras). As redes são classificadas por tamanho: PAN (pessoal), LAN (local), MAN (metropolitana) e WAN (ampla).</p>
+                </div>
+            </div>
+
+            <!-- Redes Locais (LAN) -->
+            <div class="card" id="redes-lan">
+                <h2 class="card-title">
+                    <i class="fas fa-building"></i>
+                    Redes Locais (LAN)
+                </h2>
+
+                <h3>🧠 O que é uma Rede LAN?</h3>
+                <p><strong>LAN (Local Area Network)</strong> é uma rede que conecta dispositivos em uma área geográfica limitada, como uma casa, escritório, escola ou edifício. É o tipo de rede mais comum e o que você provavelmente usa todos os dias.</p>
+
+                <p>A principal característica de uma LAN é que ela é <strong>privada</strong> — ou seja, pertence a uma organização ou pessoa, diferente da internet que é pública.</p>
+
+                <h3>Características de uma LAN</h3>
+                <ul>
+                    <li><strong>Alta velocidade:</strong> Tipicamente 100 Mbps a 10 Gbps</li>
+                    <li><strong>Baixa latência:</strong> Respostas quase instantâneas</li>
+                    <li><strong>Área limitada:</strong> Geralmente até 1-2 km</li>
+                    <li><strong>Propriedade privada:</strong> Administrada pela organização</li>
+                    <li><strong>Baixo custo de manutenção:</strong> Comparado a redes maiores</li>
+                </ul>
+
+                <h3>Componentes de uma LAN Típica</h3>
+                <h4>Switch</h4>
+                <p>O coração de uma rede LAN. O switch conecta todos os dispositivos e "aprende" onde cada um está, enviando dados apenas para o destinatário correto. Um switch de 24 portas, por exemplo, pode conectar até 24 dispositivos.</p>
+
+                <h4>Roteador</h4>
+                <p>Conecta a LAN à internet ou a outras redes. Em casas, geralmente o roteador Wi-Fi já inclui um switch embutido.</p>
+
+                <h4>Cabos de Rede</h4>
+                <p>Cabos UTP Cat5e ou Cat6 são os mais usados. Cada cabo conecta um dispositivo a uma porta do switch.</p>
+
+                <h4>Access Point (AP)</h4>
+                <p>Permite que dispositivos se conectem à LAN via Wi-Fi, sem cabos físicos.</p>
+
+                <h3>Topologias de LAN</h3>
+                <p>A topologia é o "formato" de como os dispositivos estão organizados:</p>
+
+                <h4>Topologia Estrela (Star)</h4>
+                <p>Todos os dispositivos conectam-se a um ponto central (switch). É a mais comum hoje porque se um cabo falhar, apenas um dispositivo é afetado.</p>
+
+                <h4>Topologia Barramento (Bus)</h4>
+                <p>Todos compartilham um único cabo. Era comum antigamente, mas se o cabo principal quebrar, toda a rede cai.</p>
+
+                <h4>Topologia Anel (Ring)</h4>
+                <p>Dispositivos conectados em círculo. Cada um recebe dados e passa adiante. Usado em algumas redes industriais.</p>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático: Rede de um Escritório
+                    </div>
+                    <p>Um escritório com 20 funcionários tem:</p>
+                    <ul>
+                        <li>1 switch de 24 portas central</li>
+                        <li>20 computadores conectados por cabo ao switch</li>
+                        <li>1 servidor de arquivos para compartilhar documentos</li>
+                        <li>1 impressora de rede que todos podem usar</li>
+                        <li>1 roteador conectando a LAN à internet</li>
+                        <li>2 access points para visitantes e dispositivos móveis</li>
+                    </ul>
+                    <p>Quando um funcionário salva um arquivo no servidor, os dados vão do PC → Switch → Servidor, tudo internamente sem usar a internet.</p>
+                </div>
+
+                <h3>Ethernet: O Padrão das LANs</h3>
+                <p>A maioria das LANs usa o padrão <strong>Ethernet</strong> (IEEE 802.3), que define como os dados são transmitidos nos cabos. Velocidades comuns:</p>
+                <ul>
+                    <li><strong>Fast Ethernet:</strong> 100 Mbps</li>
+                    <li><strong>Gigabit Ethernet:</strong> 1.000 Mbps (1 Gbps)</li>
+                    <li><strong>10 Gigabit Ethernet:</strong> 10.000 Mbps (10 Gbps)</li>
+                </ul>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>LAN é uma rede privada de área limitada, caracterizada por alta velocidade e baixa latência. Usa switches para conectar dispositivos, roteadores para acesso à internet, e pode ter topologia estrela, barramento ou anel. O padrão Ethernet domina as LANs modernas, oferecendo velocidades de 100 Mbps a 10 Gbps.</p>
+                </div>
+            </div>
+
+            <!-- Modelo OSI -->
+            <div class="card" id="modelo-osi">
+                <h2 class="card-title">
+                    <i class="fas fa-layer-group"></i>
+                    Modelo OSI
+                </h2>
+
+                <h3>🧠 O que é o Modelo OSI?</h3>
+                <p>O <strong>Modelo OSI (Open Systems Interconnection)</strong> é um modelo conceitual criado pela ISO em 1984 que divide a comunicação de rede em <strong>7 camadas</strong>. Cada camada tem uma função específica e se comunica apenas com as camadas adjacentes (acima e abaixo dela).</p>
+
+                <p>O modelo OSI não é um protocolo real — é uma <strong>referência teórica</strong> que ajuda a entender, projetar e diagnosticar problemas em redes. Pense nele como um "mapa" de como a comunicação deve funcionar.</p>
+
+                <h3>Por que 7 camadas?</h3>
+                <p>A divisão em camadas traz vantagens:</p>
+                <ul>
+                    <li><strong>Modularidade:</strong> Cada camada pode ser alterada sem afetar as outras</li>
+                    <li><strong>Padronização:</strong> Fabricantes diferentes podem criar produtos compatíveis</li>
+                    <li><strong>Troubleshooting:</strong> Facilita identificar onde está o problema</li>
+                    <li><strong>Especialização:</strong> Engenheiros podem focar em uma camada específica</li>
+                </ul>
+
+                <h3>As 7 Camadas do Modelo OSI</h3>
+                <p>Vamos do nível mais alto (usuário) ao mais baixo (físico):</p>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>#</th>
+                            <th>Camada</th>
+                            <th>Função</th>
+                            <th>Protocolos/Exemplos</th>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong></td>
+                            <td>Aplicação</td>
+                            <td>Interface com o usuário</td>
+                            <td>HTTP, FTP, SMTP, DNS</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong></td>
+                            <td>Apresentação</td>
+                            <td>Formatação, criptografia, compressão</td>
+                            <td>SSL/TLS, JPEG, ASCII</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td>Sessão</td>
+                            <td>Controle de diálogos e conexões</td>
+                            <td>NetBIOS, RPC</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td>Transporte</td>
+                            <td>Entrega confiável, controle de fluxo</td>
+                            <td>TCP, UDP</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td>Rede</td>
+                            <td>Endereçamento lógico e roteamento</td>
+                            <td>IP, ICMP, Roteadores</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td>Enlace de Dados</td>
+                            <td>Endereçamento físico (MAC)</td>
+                            <td>Ethernet, Switches</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td>Física</td>
+                            <td>Transmissão de bits (sinais elétricos/ópticos)</td>
+                            <td>Cabos, Hubs, Conectores</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Detalhamento de Cada Camada</h3>
+
+                <h4>Camada 7 - Aplicação</h4>
+                <p>É onde você interage diretamente. Quando você abre um navegador e digita um site, está usando a camada de aplicação (protocolo HTTP). Outros exemplos: enviar e-mail (SMTP), transferir arquivos (FTP).</p>
+
+                <h4>Camada 6 - Apresentação</h4>
+                <p>Traduz os dados para um formato que a aplicação entenda. Cuida da criptografia (HTTPS usa SSL/TLS aqui), compressão de dados e conversão de formatos (como transformar uma imagem em JPEG).</p>
+
+                <h4>Camada 5 - Sessão</h4>
+                <p>Gerencia as "conversas" entre dispositivos. Estabelece, mantém e encerra sessões. Por exemplo, quando você faz login em um site e permanece logado enquanto navega, é a camada de sessão gerenciando isso.</p>
+
+                <h4>Camada 4 - Transporte</h4>
+                <p>Garante que os dados cheguem completos e na ordem correta. O TCP (Transmission Control Protocol) é confiável — confirma cada pacote recebido. O UDP é mais rápido mas não garante entrega (usado em streaming e jogos).</p>
+
+                <h4>Camada 3 - Rede</h4>
+                <p>Responsável pelo <strong>endereçamento IP</strong> e <strong>roteamento</strong>. Decide qual caminho os dados vão seguir para chegar ao destino. Roteadores operam nesta camada.</p>
+
+                <h4>Camada 2 - Enlace de Dados</h4>
+                <p>Usa o <strong>endereço MAC</strong> (físico) para comunicação local. Divide os dados em frames e detecta erros. Switches operam nesta camada.</p>
+
+                <h4>Camada 1 - Física</h4>
+                <p>Transmite os <strong>bits brutos</strong> (0s e 1s) através do meio físico. Inclui cabos, conectores, voltagens, frequências de rádio. Hubs e repetidores operam aqui.</p>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático: Acessando um Site
+                    </div>
+                    <p>Você digita "www.google.com" no navegador. Veja o que acontece em cada camada:</p>
+                    <ol>
+                        <li><strong>Aplicação:</strong> Navegador cria requisição HTTP</li>
+                        <li><strong>Apresentação:</strong> Se for HTTPS, criptografa os dados</li>
+                        <li><strong>Sessão:</strong> Estabelece sessão com o servidor</li>
+                        <li><strong>Transporte:</strong> TCP divide em segmentos, adiciona porta (80 ou 443)</li>
+                        <li><strong>Rede:</strong> Adiciona IP de origem e destino, roteadores encaminham</li>
+                        <li><strong>Enlace:</strong> Adiciona MAC, switch direciona localmente</li>
+                        <li><strong>Física:</strong> Sinais elétricos/ópticos viajam pelos cabos</li>
+                    </ol>
+                    <p>No destino, o processo se inverte (de baixo para cima) até o servidor entender sua requisição.</p>
+                </div>
+
+                <h3>Modelo OSI vs. Modelo TCP/IP</h3>
+                <p>Na prática, a internet usa o modelo TCP/IP (4 camadas), que é uma simplificação do OSI:</p>
+                <ul>
+                    <li>Camadas 5, 6 e 7 do OSI = Camada de Aplicação do TCP/IP</li>
+                    <li>Camada 4 do OSI = Camada de Transporte do TCP/IP</li>
+                    <li>Camada 3 do OSI = Camada de Internet do TCP/IP</li>
+                    <li>Camadas 1 e 2 do OSI = Camada de Acesso à Rede do TCP/IP</li>
+                </ul>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>O Modelo OSI divide a comunicação em 7 camadas: Física (bits), Enlace (frames/MAC), Rede (pacotes/IP), Transporte (segmentos/TCP-UDP), Sessão (controle de diálogo), Apresentação (formatação/criptografia) e Aplicação (interface usuário). Cada camada tem função específica e se comunica com as adjacentes. É um modelo de referência que facilita entender e solucionar problemas de rede.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MÓDULO: DADOS E COMUNICAÇÃO ==================== -->
+        <section class="section" id="dados-comunicacao">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Dados e Comunicação</h2>
+                    <p class="section-subtitle">Como os dados são transmitidos e ferramentas de diagnóstico</p>
+                </div>
+            </div>
+
+            <!-- Transmissão de Dados -->
+            <div class="card" id="transmissao-dados">
+                <h2 class="card-title">
+                    <i class="fas fa-exchange-alt"></i>
+                    Transmissão de Dados (Bits e Bytes)
+                </h2>
+
+                <h3>🧠 O que são Bits e Bytes?</h3>
+                <p>Toda informação digital — textos, imagens, vídeos, música — é representada por <strong>números binários</strong>, uma sequência de 0s e 1s. Essa é a linguagem que os computadores entendem.</p>
+
+                <h4>Bit (Binary Digit)</h4>
+                <p>O <strong>bit</strong> é a menor unidade de informação digital. Pode ter apenas dois valores: <strong>0 ou 1</strong>. Representa um estado: ligado/desligado, sim/não, verdadeiro/falso.</p>
+
+                <h4>Byte</h4>
+                <p>Um <strong>byte</strong> é um conjunto de <strong>8 bits</strong>. Com 8 bits, podemos representar 256 valores diferentes (2⁸ = 256). Por exemplo, cada letra do alfabeto tem um código de 1 byte na tabela ASCII: a letra "A" é 01000001.</p>
+
+                <h3>Unidades de Medida de Dados</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Unidade</th>
+                            <th>Abreviação</th>
+                            <th>Equivalência</th>
+                        </tr>
+                        <tr>
+                            <td>Bit</td>
+                            <td>b</td>
+                            <td>1 bit</td>
+                        </tr>
+                        <tr>
+                            <td>Byte</td>
+                            <td>B</td>
+                            <td>8 bits</td>
+                        </tr>
+                        <tr>
+                            <td>Kilobyte</td>
+                            <td>KB</td>
+                            <td>1.024 bytes</td>
+                        </tr>
+                        <tr>
+                            <td>Megabyte</td>
+                            <td>MB</td>
+                            <td>1.024 KB (~1 milhão de bytes)</td>
+                        </tr>
+                        <tr>
+                            <td>Gigabyte</td>
+                            <td>GB</td>
+                            <td>1.024 MB (~1 bilhão de bytes)</td>
+                        </tr>
+                        <tr>
+                            <td>Terabyte</td>
+                            <td>TB</td>
+                            <td>1.024 GB (~1 trilhão de bytes)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-box warning">
+                    <div class="info-box-title">
+                        <i class="fas fa-exclamation-triangle"></i> Atenção: Bits vs. Bytes em Velocidade
+                    </div>
+                    <p>Velocidades de rede são medidas em <strong>bits por segundo (bps)</strong>, enquanto tamanhos de arquivo são em <strong>bytes (B)</strong>. Uma conexão de <strong>100 Mbps</strong> (megabits) transfere cerca de <strong>12,5 MB/s</strong> (megabytes), pois 100 ÷ 8 = 12,5.</p>
+                </div>
+
+                <h3>Como os Dados São Transmitidos?</h3>
+                <p>A transmissão de dados é o processo de enviar informações de um ponto a outro. Isso pode acontecer de três formas:</p>
+
+                <h4>1. Transmissão Simplex</h4>
+                <p>Os dados fluem em <strong>apenas uma direção</strong>. Exemplo: transmissão de TV — a emissora envia, você só recebe.</p>
+
+                <h4>2. Transmissão Half-Duplex</h4>
+                <p>Os dados podem fluir em <strong>ambas as direções, mas não simultaneamente</strong>. Exemplo: walkie-talkie — você fala ou escuta, nunca os dois ao mesmo tempo.</p>
+
+                <h4>3. Transmissão Full-Duplex</h4>
+                <p>Os dados fluem em <strong>ambas as direções ao mesmo tempo</strong>. Exemplo: ligação telefônica — você fala e ouve simultaneamente. Redes Ethernet modernas usam full-duplex.</p>
+
+                <h3>Tipos de Sinais</h3>
+                <h4>Sinal Digital</h4>
+                <p>Representa dados em valores discretos (0 e 1). É mais resistente a ruídos e é o padrão em redes modernas.</p>
+
+                <h4>Sinal Analógico</h4>
+                <p>Varia continuamente, como ondas. Era usado em telefonia antiga e rádio. Mais suscetível a interferências.</p>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Você envia uma foto de 2 MB pelo WhatsApp. Isso significa aproximadamente 16 milhões de bits (2 × 1.024 × 1.024 × 8). Em uma conexão de 10 Mbps, essa foto levaria cerca de 1,6 segundos para ser transmitida (16.000.000 ÷ 10.000.000 = 1,6s), desconsiderando overheads de protocolo.</p>
+                </div>
+
+                <h3>Largura de Banda vs. Throughput</h3>
+                <p><strong>Largura de banda</strong> é a capacidade máxima teórica de transmissão (ex: 100 Mbps).</p>
+                <p><strong>Throughput</strong> é a velocidade real alcançada, sempre menor devido a perdas, latência e congestionamento.</p>
+                <p>Analogia: largura de banda é quantas faixas tem uma rodovia; throughput é quantos carros realmente passam por hora.</p>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Bit é a menor unidade (0 ou 1), byte são 8 bits. Velocidades de rede usam bits (Mbps), arquivos usam bytes (MB). Transmissão pode ser simplex (uma direção), half-duplex (alternada) ou full-duplex (simultânea). Largura de banda é capacidade teórica; throughput é velocidade real.</p>
+                </div>
+            </div>
+
+            <!-- Ping e ipconfig -->
+            <div class="card" id="ping-ipconfig">
+                <h2 class="card-title">
+                    <i class="fas fa-terminal"></i>
+                    Ping e ipconfig (Utilização e Diferenças)
+                </h2>
+
+                <h3>🧠 O que são Ping e ipconfig?</h3>
+                <p>São <strong>comandos de diagnóstico de rede</strong> usados no Prompt de Comando (Windows) ou Terminal (Linux/Mac). São ferramentas essenciais para qualquer técnico de redes identificar e resolver problemas de conectividade.</p>
+
+                <h3>Comando PING</h3>
+                <p>O comando <strong>ping</strong> testa a <strong>conectividade</strong> entre seu computador e outro dispositivo na rede ou na internet. Ele envia pacotes ICMP (Internet Control Message Protocol) e mede o tempo de resposta.</p>
+
+                <h4>Como usar:</h4>
+                <div class="code-block">
+                    <code>
+<span class="command">ping</span> www.google.com
+<span class="command">ping</span> 192.168.1.1
+<span class="command">ping</span> 8.8.8.8
+                    </code>
+                </div>
+
+                <h4>O que o ping mostra:</h4>
+                <ul>
+                    <li><strong>Tempo de resposta (latência):</strong> Quanto menor, melhor. Medido em milissegundos (ms)</li>
+                    <li><strong>TTL (Time To Live):</strong> Quantos "saltos" o pacote pode dar antes de ser descartado</li>
+                    <li><strong>Pacotes enviados/recebidos/perdidos:</strong> Se houver perda, há problema de conexão</li>
+                </ul>
+
+                <h4>Exemplo de saída:</h4>
+                <div class="code-block">
+                    <code>
+Disparando google.com [142.250.218.14] com 32 bytes de dados:
+Resposta de 142.250.218.14: bytes=32 tempo=15ms TTL=117
+Resposta de 142.250.218.14: bytes=32 tempo=14ms TTL=117
+Resposta de 142.250.218.14: bytes=32 tempo=13ms TTL=117
+Resposta de 142.250.218.14: bytes=32 tempo=14ms TTL=117
+
+Estatísticas do Ping para 142.250.218.14:
+    Pacotes: Enviados = 4, Recebidos = 4, Perdidos = 0 (0% de perda)
+    </code>
+                </div>
+
+                <h4>Interpretando o ping:</h4>
+                <ul>
+                    <li><strong>Tempo < 20ms:</strong> Excelente conexão</li>
+                    <li><strong>Tempo 20-100ms:</strong> Bom para uso geral</li>
+                    <li><strong>Tempo > 100ms:</strong> Pode haver lentidão perceptível</li>
+                    <li><strong>"Tempo limite esgotado":</strong> O destino não respondeu (pode estar offline ou bloqueando ping)</li>
+                </ul>
+
+                <h3>Comando IPCONFIG</h3>
+                <p>O comando <strong>ipconfig</strong> exibe as <strong>configurações de rede</strong> do seu computador. Mostra informações sobre todas as interfaces de rede (Wi-Fi, Ethernet, etc.).</p>
+
+                <h4>Como usar:</h4>
+                <div class="code-block">
+                    <code>
+<span class="command">ipconfig</span>               <span class="comment"># Informações básicas</span>
+<span class="command">ipconfig /all</span>          <span class="comment"># Informações detalhadas</span>
+<span class="command">ipconfig /release</span>      <span class="comment"># Libera o IP atual (DHCP)</span>
+<span class="command">ipconfig /renew</span>        <span class="comment"># Solicita novo IP do DHCP</span>
+<span class="command">ipconfig /flushdns</span>     <span class="comment"># Limpa o cache DNS</span>
+                    </code>
+                </div>
+
+                <h4>Informações mostradas pelo ipconfig:</h4>
+                <ul>
+                    <li><strong>Endereço IPv4:</strong> O IP do seu computador (ex: 192.168.1.100)</li>
+                    <li><strong>Máscara de sub-rede:</strong> Define o tamanho da rede local (ex: 255.255.255.0)</li>
+                    <li><strong>Gateway padrão:</strong> O IP do roteador (ex: 192.168.1.1)</li>
+                    <li><strong>Servidores DNS:</strong> Quem traduz nomes para IPs</li>
+                    <li><strong>Endereço MAC:</strong> Identificador físico da placa de rede</li>
+                </ul>
+
+                <h3>Diferenças entre Ping e ipconfig</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Característica</th>
+                            <th>PING</th>
+                            <th>IPCONFIG</th>
+                        </tr>
+                        <tr>
+                            <td>Função</td>
+                            <td>Testa conectividade</td>
+                            <td>Exibe configurações de rede</td>
+                        </tr>
+                        <tr>
+                            <td>Uso principal</td>
+                            <td>Verificar se um destino está acessível</td>
+                            <td>Ver ou alterar configurações de IP</td>
+                        </tr>
+                        <tr>
+                            <td>Protocolo</td>
+                            <td>ICMP</td>
+                            <td>Não usa protocolo (consulta local)</td>
+                        </tr>
+                        <tr>
+                            <td>Resultado</td>
+                            <td>Tempo de resposta, perda de pacotes</td>
+                            <td>IP, máscara, gateway, DNS</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático de Diagnóstico
+                    </div>
+                    <p>Cenário: Seu computador não acessa a internet. Como diagnosticar?</p>
+                    <ol>
+                        <li><strong>ipconfig</strong> — Verifique se tem IP válido. Se for 169.254.x.x, não obteve IP do DHCP.</li>
+                        <li><strong>ping 127.0.0.1</strong> — Testa sua própria placa de rede (localhost). Deve funcionar.</li>
+                        <li><strong>ping [gateway]</strong> — Testa conexão com o roteador. Se falhar, problema é na rede local.</li>
+                        <li><strong>ping 8.8.8.8</strong> — Testa conexão com a internet (DNS do Google). Se falhar, problema é no roteador ou provedor.</li>
+                        <li><strong>ping www.google.com</strong> — Testa DNS. Se 8.8.8.8 funcionar mas este não, problema é no DNS.</li>
+                    </ol>
+                </div>
+
+                <div class="info-box tip">
+                    <div class="info-box-title">
+                        <i class="fas fa-check-circle"></i> Dica Profissional
+                    </div>
+                    <p>Se a internet está lenta, execute <code>ping -t www.google.com</code> (o -t faz ping contínuo). Observe se há variações grandes no tempo ou perda de pacotes. Pressione Ctrl+C para parar e ver estatísticas.</p>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>PING testa conectividade e mede latência enviando pacotes para um destino. IPCONFIG mostra e gerencia configurações de rede locais (IP, gateway, DNS). Juntos, formam a base do diagnóstico de problemas de rede: ipconfig para ver suas configurações, ping para testar a comunicação.</p>
+                </div>
+            </div>
+
+            <!-- TCP / IP / DNS / Gateway -->
+            <div class="card" id="tcp-ip-dns">
+                <h2 class="card-title">
+                    <i class="fas fa-project-diagram"></i>
+                    TCP / IP / DNS / Gateway Padrão
+                </h2>
+
+                <h3>🧠 Os Pilares da Comunicação em Rede</h3>
+                <p>Para que dispositivos se comuniquem na internet, precisamos de endereçamento (IP), regras de comunicação (TCP), tradução de nomes (DNS) e uma porta de saída (Gateway). Vamos entender cada um.</p>
+
+                <h3>IP (Internet Protocol)</h3>
+                <p>O <strong>IP</strong> é o endereço único de cada dispositivo em uma rede. Funciona como o endereço da sua casa — sem ele, as "cartas" (dados) não sabem onde chegar.</p>
+
+                <h4>IPv4</h4>
+                <p>Formato mais comum: quatro números de 0 a 255 separados por pontos.</p>
+                <div class="code-block">
+                    <code>192.168.1.100</code>
+                </div>
+                <p>Existem cerca de 4,3 bilhões de endereços IPv4 possíveis, mas já estão esgotados — por isso existe o IPv6.</p>
+
+                <h4>IPv6</h4>
+                <p>Novo formato com muito mais endereços disponíveis:</p>
+                <div class="code-block">
+                    <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code>
+                </div>
+
+                <h4>IP Público vs. IP Privado</h4>
+                <ul>
+                    <li><strong>IP Público:</strong> Visível na internet, atribuído pelo provedor. Seu roteador tem um.</li>
+                    <li><strong>IP Privado:</strong> Usado dentro da sua rede local. Cada dispositivo tem um diferente. Faixas comuns: 192.168.x.x, 10.x.x.x, 172.16-31.x.x</li>
+                </ul>
+
+                <h3>TCP (Transmission Control Protocol)</h3>
+                <p>O <strong>TCP</strong> é um protocolo de transporte que garante <strong>entrega confiável</strong> dos dados. Ele:</p>
+                <ul>
+                    <li><strong>Estabelece conexão:</strong> Antes de enviar, confirma que o destino está pronto (handshake de 3 vias)</li>
+                    <li><strong>Divide em segmentos:</strong> Quebra dados grandes em partes menores</li>
+                    <li><strong>Numera pacotes:</strong> Permite reordenar se chegarem fora de ordem</li>
+                    <li><strong>Confirma recebimento:</strong> Cada pacote recebe um "ACK" de confirmação</li>
+                    <li><strong>Retransmite:</strong> Se um pacote se perder, envia novamente</li>
+                </ul>
+
+                <h4>Handshake de 3 Vias (Three-Way Handshake)</h4>
+                <p>É como uma conversa educada antes de começar:</p>
+                <ol>
+                    <li><strong>SYN:</strong> "Oi, posso me conectar?" (cliente → servidor)</li>
+                    <li><strong>SYN-ACK:</strong> "Claro, estou pronto!" (servidor → cliente)</li>
+                    <li><strong>ACK:</strong> "Ótimo, vou começar a enviar!" (cliente → servidor)</li>
+                </ol>
+
+                <h4>TCP vs. UDP</h4>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Característica</th>
+                            <th>TCP</th>
+                            <th>UDP</th>
+                        </tr>
+                        <tr>
+                            <td>Conexão</td>
+                            <td>Orientado a conexão</td>
+                            <td>Sem conexão</td>
+                        </tr>
+                        <tr>
+                            <td>Confiabilidade</td>
+                            <td>Garante entrega</td>
+                            <td>Não garante</td>
+                        </tr>
+                        <tr>
+                            <td>Velocidade</td>
+                            <td>Mais lento</td>
+                            <td>Mais rápido</td>
+                        </tr>
+                        <tr>
+                            <td>Uso típico</td>
+                            <td>HTTP, e-mail, arquivos</td>
+                            <td>Streaming, jogos, DNS</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>DNS (Domain Name System)</h3>
+                <p>O <strong>DNS</strong> é o "catálogo telefônico" da internet. Ele traduz nomes de domínio (que humanos entendem) para endereços IP (que computadores entendem).</p>
+
+                <h4>Como funciona:</h4>
+                <ol>
+                    <li>Você digita <strong>www.google.com</strong> no navegador</li>
+                    <li>Seu computador pergunta ao servidor DNS: "Qual o IP de google.com?"</li>
+                    <li>DNS responde: "É 142.250.218.14"</li>
+                    <li>Seu computador então conecta-se ao IP 142.250.218.14</li>
+                </ol>
+
+                <h4>Servidores DNS famosos:</h4>
+                <ul>
+                    <li><strong>Google:</strong> 8.8.8.8 e 8.8.4.4</li>
+                    <li><strong>Cloudflare:</strong> 1.1.1.1 e 1.0.0.1</li>
+                    <li><strong>OpenDNS:</strong> 208.67.222.222</li>
+                </ul>
+
+                <h3>Gateway Padrão</h3>
+                <p>O <strong>Gateway Padrão</strong> é a "porta de saída" da sua rede local para outras redes (incluindo a internet). Normalmente, é o IP do seu roteador.</p>
+
+                <p>Quando você quer acessar algo fora da sua rede local, seu computador envia os dados para o gateway, que então encaminha para o destino correto.</p>
+
+                <h4>Analogia:</h4>
+                <p>Imagine sua casa como a rede local. O gateway é a porta da frente. Para sair de casa (acessar a internet), você precisa passar pela porta. O roteador é quem decide para onde enviar depois que você sai.</p>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático Completo
+                    </div>
+                    <p>Você quer acessar www.netflix.com. Eis o que acontece:</p>
+                    <ol>
+                        <li>Seu PC (IP: 192.168.1.100) pergunta ao <strong>DNS</strong>: "Qual IP do netflix.com?"</li>
+                        <li>DNS responde: "É 52.94.237.X"</li>
+                        <li>Seu PC vê que 52.x.x.x não está na rede local (192.168.1.x)</li>
+                        <li>Envia os dados para o <strong>Gateway</strong> (192.168.1.1 — seu roteador)</li>
+                        <li>O roteador usa <strong>TCP/IP</strong> para enviar pela internet até o Netflix</li>
+                        <li>O servidor Netflix responde, e o processo se reverte</li>
+                    </ol>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p><strong>IP</strong> é o endereço único de cada dispositivo. <strong>TCP</strong> garante entrega confiável dos dados com confirmações. <strong>DNS</strong> traduz nomes (google.com) para IPs. <strong>Gateway</strong> é a saída da rede local para outras redes. Juntos, esses elementos permitem a comunicação na internet.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MÓDULO: CONFIGURAÇÃO DE REDE ==================== -->
+        <section class="section" id="configuracao-rede">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Configuração de Rede</h2>
+                    <p class="section-subtitle">Configuração de equipamentos e roteamento</p>
+                </div>
+            </div>
+
+            <!-- Configuração de Switches -->
+            <div class="card" id="config-switches">
+                <h2 class="card-title">
+                    <i class="fas fa-server"></i>
+                    Configuração Básica de Switches (Packet Tracer)
+                </h2>
+
+                <h3>🧠 O que é um Switch?</h3>
+                <p>Um <strong>switch</strong> é um dispositivo de rede que conecta múltiplos dispositivos em uma rede local (LAN) e <strong>encaminha dados apenas para o dispositivo de destino</strong>, diferente do hub que envia para todos.</p>
+
+                <p>O switch opera na <strong>Camada 2 (Enlace)</strong> do modelo OSI, usando endereços MAC para direcionar o tráfego.</p>
+
+                <h3>Cisco Packet Tracer</h3>
+                <p>O <strong>Packet Tracer</strong> é um simulador de redes da Cisco, usado para aprender e praticar configuração de equipamentos sem precisar de hardware físico. É gratuito e amplamente usado em cursos e certificações.</p>
+
+                <h3>Modos de Acesso no CLI</h3>
+                <p>Switches e roteadores Cisco têm diferentes "modos" de linha de comando:</p>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Modo</th>
+                            <th>Prompt</th>
+                            <th>Descrição</th>
+                        </tr>
+                        <tr>
+                            <td>User EXEC</td>
+                            <td>Switch></td>
+                            <td>Modo inicial, comandos limitados</td>
+                        </tr>
+                        <tr>
+                            <td>Privileged EXEC</td>
+                            <td>Switch#</td>
+                            <td>Modo privilegiado, comandos de visualização</td>
+                        </tr>
+                        <tr>
+                            <td>Global Config</td>
+                            <td>Switch(config)#</td>
+                            <td>Modo de configuração global</td>
+                        </tr>
+                        <tr>
+                            <td>Interface Config</td>
+                            <td>Switch(config-if)#</td>
+                            <td>Configuração de interface específica</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Comandos Básicos</h3>
+
+                <h4>Entrar no Modo Privilegiado</h4>
+                <div class="code-block">
+                    <code>
+Switch> <span class="command">enable</span>
+Switch#
+                    </code>
+                </div>
+                <p>O comando <code>enable</code> eleva do modo User EXEC para Privileged EXEC, dando acesso a mais comandos.</p>
+
+                <h4>Entrar no Modo de Configuração Global</h4>
+                <div class="code-block">
+                    <code>
+Switch# <span class="command">configure terminal</span>
+Switch(config)#
+                    </code>
+                </div>
+                <p>Abreviação comum: <code>conf t</code></p>
+
+                <h4>Nomear o Dispositivo</h4>
+                <div class="code-block">
+                    <code>
+Switch(config)# <span class="command">hostname</span> SW-Escritorio
+SW-Escritorio(config)#
+                    </code>
+                </div>
+                <p>Definir um nome ajuda a identificar o equipamento na rede.</p>
+
+                <h4>Configurar Senha de Acesso</h4>
+                <div class="code-block">
+                    <code>
+<span class="comment">! Senha para modo privilegiado (criptografada)</span>
+SW-Escritorio(config)# <span class="command">enable secret</span> minhasenha123
+
+<span class="comment">! Senha para acesso via console</span>
+SW-Escritorio(config)# <span class="command">line console 0</span>
+SW-Escritorio(config-line)# <span class="command">password</span> senhaConsole
+SW-Escritorio(config-line)# <span class="command">login</span>
+SW-Escritorio(config-line)# <span class="command">exit</span>
+                    </code>
+                </div>
+
+                <h4>Configurar Banner de Aviso</h4>
+                <div class="code-block">
+                    <code>
+SW-Escritorio(config)# <span class="command">banner motd</span> #Acesso restrito! Somente pessoal autorizado.#
+                    </code>
+                </div>
+                <p>O banner aparece quando alguém acessa o equipamento. O # delimita o início e fim da mensagem.</p>
+
+                <h4>Salvar Configuração</h4>
+                <div class="code-block">
+                    <code>
+SW-Escritorio# <span class="command">copy running-config startup-config</span>
+                    </code>
+                </div>
+                <p>Ou a versão curta: <code>wr</code> (write). Isso salva a configuração atual na memória permanente.</p>
+
+                <h4>Visualizar Configuração</h4>
+                <div class="code-block">
+                    <code>
+SW-Escritorio# <span class="command">show running-config</span>   <span class="comment">! Config atual em memória</span>
+SW-Escritorio# <span class="command">show startup-config</span>   <span class="comment">! Config salva</span>
+SW-Escritorio# <span class="command">show interfaces</span>       <span class="comment">! Status das interfaces</span>
+SW-Escritorio# <span class="command">show mac address-table</span> <span class="comment">! Tabela de endereços MAC</span>
+                    </code>
+                </div>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático: Configuração Inicial Completa
+                    </div>
+                    <div class="code-block">
+                        <code>
+Switch> enable
+Switch# configure terminal
+Switch(config)# hostname SW-Recepcao
+SW-Recepcao(config)# enable secret Senha@123
+SW-Recepcao(config)# banner motd #ATENCAO: Acesso autorizado apenas!#
+SW-Recepcao(config)# line console 0
+SW-Recepcao(config-line)# password Console123
+SW-Recepcao(config-line)# login
+SW-Recepcao(config-line)# exit
+SW-Recepcao(config)# exit
+SW-Recepcao# copy running-config startup-config
+                        </code>
+                    </div>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Switches Cisco são configurados via CLI com diferentes modos: User EXEC (>), Privileged EXEC (#), e Global Config (config)#. Comandos essenciais: <code>enable</code> (modo privilegiado), <code>configure terminal</code> (configuração), <code>hostname</code> (nome), <code>enable secret</code> (senha), <code>copy run start</code> (salvar). O Packet Tracer permite praticar sem equipamento físico.</p>
+                </div>
+            </div>
+
+            <!-- Roteamento -->
+            <div class="card" id="roteamento">
+                <h2 class="card-title">
+                    <i class="fas fa-route"></i>
+                    Roteamento (Definição e Finalidade)
+                </h2>
+
+                <h3>🧠 O que é Roteamento?</h3>
+                <p><strong>Roteamento</strong> é o processo de <strong>escolher o melhor caminho</strong> para que os dados cheguem de uma rede de origem até uma rede de destino. É como um GPS que calcula a melhor rota para você chegar ao seu destino.</p>
+
+                <p>O dispositivo responsável pelo roteamento é o <strong>roteador (router)</strong>, que opera na <strong>Camada 3 (Rede)</strong> do modelo OSI, trabalhando com endereços IP.</p>
+
+                <h3>Por que o Roteamento é Necessário?</h3>
+                <p>Switches conectam dispositivos na <strong>mesma rede</strong>. Mas e quando você quer se comunicar com um dispositivo em <strong>outra rede</strong> (como um servidor na internet)?</p>
+
+                <p>É aí que entra o roteador. Ele:</p>
+                <ul>
+                    <li>Conecta diferentes redes entre si</li>
+                    <li>Decide qual interface usar para enviar pacotes</li>
+                    <li>Encontra o melhor caminho quando há múltiplas opções</li>
+                    <li>Filtra e controla o tráfego entre redes</li>
+                </ul>
+
+                <h3>Como Funciona o Roteamento</h3>
+                <ol>
+                    <li>Um pacote chega ao roteador com um IP de destino</li>
+                    <li>O roteador consulta sua <strong>tabela de roteamento</strong></li>
+                    <li>Encontra a melhor rota para aquele destino</li>
+                    <li>Encaminha o pacote pela interface apropriada</li>
+                </ol>
+
+                <h3>Tipos de Roteamento</h3>
+
+                <h4>1. Roteamento Estático</h4>
+                <p>As rotas são <strong>configuradas manualmente</strong> pelo administrador. Ideal para redes pequenas e simples.</p>
+                <ul>
+                    <li><strong>Vantagens:</strong> Simples, sem overhead de CPU, mais seguro</li>
+                    <li><strong>Desvantagens:</strong> Não se adapta a mudanças, trabalhoso em redes grandes</li>
+                </ul>
+
+                <h4>2. Roteamento Dinâmico</h4>
+                <p>Roteadores <strong>aprendem rotas automaticamente</strong> usando protocolos de roteamento, trocando informações entre si.</p>
+                <ul>
+                    <li><strong>Vantagens:</strong> Se adapta automaticamente, ideal para redes grandes</li>
+                    <li><strong>Desvantagens:</strong> Consome mais recursos, mais complexo</li>
+                </ul>
+
+                <h4>Protocolos de Roteamento Dinâmico:</h4>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Protocolo</th>
+                            <th>Tipo</th>
+                            <th>Uso</th>
+                        </tr>
+                        <tr>
+                            <td>RIP</td>
+                            <td>Distance Vector</td>
+                            <td>Redes pequenas, simples</td>
+                        </tr>
+                        <tr>
+                            <td>OSPF</td>
+                            <td>Link State</td>
+                            <td>Redes médias/grandes</td>
+                        </tr>
+                        <tr>
+                            <td>EIGRP</td>
+                            <td>Híbrido (Cisco)</td>
+                            <td>Redes corporativas Cisco</td>
+                        </tr>
+                        <tr>
+                            <td>BGP</td>
+                            <td>Path Vector</td>
+                            <td>Internet, entre ISPs</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Você está em casa (rede 192.168.1.0) e quer acessar o Facebook (rede 157.240.x.x):</p>
+                    <ol>
+                        <li>Seu PC envia o pacote para o <strong>gateway padrão</strong> (seu roteador doméstico)</li>
+                        <li>O roteador vê que 157.240.x.x não é local e encaminha para o <strong>ISP</strong></li>
+                        <li>O roteador do ISP consulta sua tabela e encaminha para o próximo roteador</li>
+                        <li>Esse processo se repete por vários roteadores (chamados "saltos" ou "hops")</li>
+                        <li>Eventualmente, o pacote chega ao servidor do Facebook</li>
+                    </ol>
+                    <p>Você pode ver esse caminho usando o comando <code>tracert www.facebook.com</code> no Windows.</p>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Roteamento é escolher o melhor caminho entre redes. Roteadores usam tabelas de roteamento para decidir por onde enviar pacotes. Pode ser estático (manual) ou dinâmico (automático via protocolos como RIP, OSPF, EIGRP, BGP). Sem roteamento, não existiria comunicação entre redes diferentes.</p>
+                </div>
+            </div>
+
+            <!-- Tabelas de Roteamento -->
+            <div class="card" id="tabelas-roteamento">
+                <h2 class="card-title">
+                    <i class="fas fa-table"></i>
+                    Tabelas de Roteamento
+                </h2>
+
+                <h3>🧠 O que é uma Tabela de Roteamento?</h3>
+                <p>A <strong>tabela de roteamento</strong> é uma estrutura de dados que o roteador consulta para decidir <strong>por onde enviar cada pacote</strong>. É como um mapa que mostra quais caminhos levam a quais destinos.</p>
+
+                <p>Cada entrada na tabela contém:</p>
+                <ul>
+                    <li><strong>Rede de destino:</strong> Para onde o pacote quer ir</li>
+                    <li><strong>Máscara de sub-rede:</strong> Define o tamanho da rede</li>
+                    <li><strong>Próximo salto (Next Hop):</strong> Para qual roteador enviar</li>
+                    <li><strong>Interface de saída:</strong> Por qual porta física sair</li>
+                    <li><strong>Métrica:</strong> "Custo" da rota (quanto menor, melhor)</li>
+                </ul>
+
+                <h3>Como o Roteador Usa a Tabela</h3>
+                <ol>
+                    <li>Recebe um pacote com IP de destino (ex: 172.16.5.100)</li>
+                    <li>Procura na tabela qual rede corresponde a esse IP</li>
+                    <li>Se encontrar múltiplas correspondências, escolhe a mais específica</li>
+                    <li>Encaminha pela interface/próximo salto indicado</li>
+                </ol>
+
+                <h3>Visualizar a Tabela de Roteamento</h3>
+                <h4>Em Roteadores Cisco:</h4>
+                <div class="code-block">
+                    <code>
+Router# <span class="command">show ip route</span>
+                    </code>
+                </div>
+
+                <h4>No Windows:</h4>
+                <div class="code-block">
+                    <code>
+C:\> <span class="command">route print</span>
+                    </code>
+                </div>
+
+                <h4>No Linux:</h4>
+                <div class="code-block">
+                    <code>
+$ <span class="command">ip route</span>
+<span class="comment">ou</span>
+$ <span class="command">netstat -r</span>
+                    </code>
+                </div>
+
+                <h3>Exemplo de Tabela de Roteamento</h3>
+                <div class="code-block">
+                    <code>
+Router# show ip route
+Codes: C - connected, S - static, R - RIP, O - OSPF
+
+Gateway of last resort is 203.0.113.1 to network 0.0.0.0
+
+C    192.168.1.0/24 is directly connected, GigabitEthernet0/0
+C    192.168.2.0/24 is directly connected, GigabitEthernet0/1
+S    10.0.0.0/8 [1/0] via 192.168.1.254
+O    172.16.0.0/16 [110/20] via 192.168.2.1
+S*   0.0.0.0/0 [1/0] via 203.0.113.1
+                    </code>
+                </div>
+
+                <h4>Interpretando:</h4>
+                <ul>
+                    <li><strong>C (Connected):</strong> Redes diretamente conectadas às interfaces do roteador</li>
+                    <li><strong>S (Static):</strong> Rotas configuradas manualmente</li>
+                    <li><strong>O (OSPF):</strong> Rotas aprendidas via protocolo OSPF</li>
+                    <li><strong>0.0.0.0/0:</strong> Rota padrão (default route) — usada quando não há correspondência específica</li>
+                </ul>
+
+                <h3>Rota Padrão (Default Route)</h3>
+                <p>É a rota "coringa" usada quando o roteador não encontra uma correspondência específica na tabela. Geralmente aponta para a internet ou um roteador de borda.</p>
+                <div class="code-block">
+                    <code>
+Router(config)# <span class="command">ip route 0.0.0.0 0.0.0.0 203.0.113.1</span>
+                    </code>
+                </div>
+                <p>Significa: "Para qualquer destino desconhecido, envie para 203.0.113.1".</p>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Um roteador recebe um pacote para <strong>172.16.50.25</strong>:</p>
+                    <ol>
+                        <li>Verifica: É 192.168.1.x? Não.</li>
+                        <li>Verifica: É 192.168.2.x? Não.</li>
+                        <li>Verifica: É 10.x.x.x? Não.</li>
+                        <li>Verifica: É 172.16.x.x? <strong>SIM!</strong> (entrada OSPF)</li>
+                        <li>Envia para 192.168.2.1 via GigabitEthernet0/1</li>
+                    </ol>
+                    <p>Se nenhuma rota correspondesse, usaria a rota padrão (0.0.0.0/0).</p>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>A tabela de roteamento é o "mapa" que o roteador consulta para encaminhar pacotes. Contém redes de destino, próximos saltos e interfaces. Rotas podem ser conectadas (C), estáticas (S) ou dinâmicas (R, O, etc.). A rota padrão (0.0.0.0/0) é usada quando não há correspondência específica.</p>
+                </div>
+            </div>
+
+            <!-- Interfaces de Rede -->
+            <div class="card" id="interfaces-rede">
+                <h2 class="card-title">
+                    <i class="fas fa-ethernet"></i>
+                    Interfaces de Rede
+                </h2>
+
+                <h3>🧠 O que é uma Interface de Rede?</h3>
+                <p>Uma <strong>interface de rede</strong> é o ponto de conexão entre um dispositivo e a rede. Pode ser uma porta física (como uma entrada Ethernet) ou virtual (como uma interface de loopback ou VLAN).</p>
+
+                <p>Cada interface tem seu próprio endereço IP e configurações, e pode ser ligada/desligada independentemente.</p>
+
+                <h3>Tipos de Interfaces</h3>
+
+                <h4>Interfaces Físicas</h4>
+                <ul>
+                    <li><strong>FastEthernet (Fa):</strong> 100 Mbps</li>
+                    <li><strong>GigabitEthernet (Gi/Gig):</strong> 1 Gbps</li>
+                    <li><strong>Serial:</strong> Conexões WAN ponto-a-ponto</li>
+                    <li><strong>Wi-Fi:</strong> Interface sem fio</li>
+                </ul>
+
+                <h4>Interfaces Virtuais</h4>
+                <ul>
+                    <li><strong>Loopback:</strong> Interface virtual interna (sempre ativa)</li>
+                    <li><strong>VLAN Interface (SVI):</strong> Para roteamento entre VLANs</li>
+                    <li><strong>Tunnel:</strong> Para VPNs e túneis</li>
+                </ul>
+
+                <h3>Nomenclatura em Equipamentos Cisco</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Interface</th>
+                            <th>Abreviação</th>
+                            <th>Exemplo</th>
+                        </tr>
+                        <tr>
+                            <td>FastEthernet</td>
+                            <td>Fa</td>
+                            <td>Fa0/0, Fa0/1</td>
+                        </tr>
+                        <tr>
+                            <td>GigabitEthernet</td>
+                            <td>Gi ou Gig</td>
+                            <td>Gi0/0, Gi0/1</td>
+                        </tr>
+                        <tr>
+                            <td>Serial</td>
+                            <td>Se</td>
+                            <td>Se0/0/0</td>
+                        </tr>
+                        <tr>
+                            <td>Loopback</td>
+                            <td>Lo</td>
+                            <td>Lo0, Lo1</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Configuração de Interface em Roteador</h3>
+                <div class="code-block">
+                    <code>
+Router# <span class="command">configure terminal</span>
+Router(config)# <span class="command">interface GigabitEthernet0/0</span>
+Router(config-if)# <span class="command">ip address 192.168.1.1 255.255.255.0</span>
+Router(config-if)# <span class="command">description Link para LAN Escritorio</span>
+Router(config-if)# <span class="command">no shutdown</span>
+Router(config-if)# <span class="command">exit</span>
+                    </code>
+                </div>
+
+                <h4>Explicação dos comandos:</h4>
+                <ul>
+                    <li><code>interface GigabitEthernet0/0</code> — Entra na configuração da interface</li>
+                    <li><code>ip address</code> — Define o IP e máscara</li>
+                    <li><code>description</code> — Adiciona uma descrição (documentação)</li>
+                    <li><code>no shutdown</code> — Ativa a interface (por padrão, estão desligadas)</li>
+                </ul>
+
+                <h3>Verificar Status das Interfaces</h3>
+                <div class="code-block">
+                    <code>
+Router# <span class="command">show ip interface brief</span>
+
+Interface              IP-Address      OK? Method Status    Protocol
+GigabitEthernet0/0     192.168.1.1     YES manual up        up
+GigabitEthernet0/1     192.168.2.1     YES manual up        up
+Serial0/0/0            unassigned      YES unset  down      down
+Loopback0              10.0.0.1        YES manual up        up
+                    </code>
+                </div>
+
+                <h4>Interpretando Status:</h4>
+                <ul>
+                    <li><strong>up/up:</strong> Interface funcionando perfeitamente</li>
+                    <li><strong>up/down:</strong> Fisicamente conectada, mas sem protocolo (problema de configuração)</li>
+                    <li><strong>down/down:</strong> Interface desativada ou sem conexão física</li>
+                    <li><strong>administratively down:</strong> Desligada pelo administrador (precisa <code>no shutdown</code>)</li>
+                </ul>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Seu computador tem duas interfaces: Ethernet (cabo) e Wi-Fi. No Windows, você vê:</p>
+                    <ul>
+                        <li><strong>Ethernet:</strong> 192.168.1.50 (conectado ao roteador via cabo)</li>
+                        <li><strong>Wi-Fi:</strong> Desconectado (você prefere o cabo mais rápido)</li>
+                    </ul>
+                    <p>Quando você desconecta o cabo, o Windows automaticamente ativa o Wi-Fi e obtém um novo IP. Cada interface opera independentemente.</p>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Interfaces são pontos de conexão com a rede, físicas (Ethernet, Serial) ou virtuais (Loopback, VLAN). Em Cisco, usa-se <code>interface [tipo][número]</code> para configurar. <code>no shutdown</code> ativa a interface. O comando <code>show ip interface brief</code> mostra status rápido de todas as interfaces.</p>
+                </div>
+            </div>
+
+            <!-- Comandos Básicos de Configuração -->
+            <div class="card" id="comandos-config">
+                <h2 class="card-title">
+                    <i class="fas fa-keyboard"></i>
+                    Comandos Básicos de Configuração e Consultas
+                </h2>
+
+                <h3>🧠 Comandos Essenciais para Administração de Rede</h3>
+                <p>Conhecer os comandos básicos é fundamental para configurar e diagnosticar equipamentos de rede. Aqui estão os mais importantes, divididos por categoria.</p>
+
+                <h3>Comandos de Navegação (Cisco IOS)</h3>
+                <div class="code-block">
+                    <code>
+<span class="command">enable</span>                <span class="comment">! Entra no modo privilegiado</span>
+<span class="command">disable</span>               <span class="comment">! Volta ao modo usuário</span>
+<span class="command">configure terminal</span>    <span class="comment">! Entra no modo de configuração global</span>
+<span class="command">exit</span>                  <span class="comment">! Sai do modo atual (um nível acima)</span>
+<span class="command">end</span>                   <span class="comment">! Sai direto para modo privilegiado</span>
+<span class="command">?</span>                     <span class="comment">! Mostra ajuda/comandos disponíveis</span>
+                    </code>
+                </div>
+
+                <h3>Comandos de Configuração</h3>
+                <div class="code-block">
+                    <code>
+<span class="comment">! Configuração básica do dispositivo</span>
+<span class="command">hostname</span> NOME              <span class="comment">! Define nome do dispositivo</span>
+<span class="command">enable secret</span> SENHA        <span class="comment">! Senha criptografada para modo privilegiado</span>
+<span class="command">banner motd</span> #MENSAGEM#     <span class="comment">! Mensagem de login</span>
+
+<span class="comment">! Configuração de interface</span>
+<span class="command">interface</span> Gi0/0             <span class="comment">! Entra na interface</span>
+<span class="command">ip address</span> IP MASCARA      <span class="comment">! Define IP</span>
+<span class="command">no shutdown</span>                <span class="comment">! Ativa interface</span>
+<span class="command">shutdown</span>                   <span class="comment">! Desativa interface</span>
+<span class="command">description</span> TEXTO          <span class="comment">! Descrição da interface</span>
+
+<span class="comment">! Roteamento estático</span>
+<span class="command">ip route</span> REDE MASCARA GATEWAY    <span class="comment">! Adiciona rota estática</span>
+<span class="command">ip route 0.0.0.0 0.0.0.0</span> GW     <span class="comment">! Rota padrão</span>
+                    </code>
+                </div>
+
+                <h3>Comandos de Consulta (show)</h3>
+                <div class="code-block">
+                    <code>
+<span class="command">show running-config</span>       <span class="comment">! Configuração atual em execução</span>
+<span class="command">show startup-config</span>       <span class="comment">! Configuração salva</span>
+<span class="command">show ip interface brief</span>   <span class="comment">! Resumo de todas as interfaces</span>
+<span class="command">show interfaces</span>           <span class="comment">! Detalhes completos das interfaces</span>
+<span class="command">show ip route</span>             <span class="comment">! Tabela de roteamento</span>
+<span class="command">show mac address-table</span>    <span class="comment">! Tabela MAC (switches)</span>
+<span class="command">show vlan brief</span>           <span class="comment">! VLANs configuradas (switches)</span>
+<span class="command">show version</span>              <span class="comment">! Versão do IOS e hardware</span>
+<span class="command">show cdp neighbors</span>        <span class="comment">! Dispositivos Cisco vizinhos</span>
+                    </code>
+                </div>
+
+                <h3>Comandos de Salvamento</h3>
+                <div class="code-block">
+                    <code>
+<span class="command">copy running-config startup-config</span>    <span class="comment">! Salva configuração</span>
+<span class="command">write memory</span>                          <span class="comment">! Mesmo que acima (abreviado: wr)</span>
+<span class="command">erase startup-config</span>                  <span class="comment">! Apaga config salva (reset)</span>
+<span class="command">reload</span>                                <span class="comment">! Reinicia o equipamento</span>
+                    </code>
+                </div>
+
+                <h3>Comandos de Diagnóstico (Windows/Linux)</h3>
+                <div class="code-block">
+                    <code>
+<span class="comment">! Windows</span>
+<span class="command">ipconfig</span>              <span class="comment">! Mostra configuração IP</span>
+<span class="command">ipconfig /all</span>         <span class="comment">! Detalhes completos</span>
+<span class="command">ipconfig /release</span>     <span class="comment">! Libera IP do DHCP</span>
+<span class="command">ipconfig /renew</span>       <span class="comment">! Renova IP do DHCP</span>
+<span class="command">ipconfig /flushdns</span>    <span class="comment">! Limpa cache DNS</span>
+<span class="command">ping</span> IP/HOST           <span class="comment">! Testa conectividade</span>
+<span class="command">tracert</span> HOST           <span class="comment">! Mostra rota até o destino</span>
+<span class="command">nslookup</span> HOST          <span class="comment">! Consulta DNS</span>
+<span class="command">netstat -an</span>           <span class="comment">! Conexões ativas</span>
+<span class="command">arp -a</span>                <span class="comment">! Tabela ARP local</span>
+
+<span class="comment">! Linux</span>
+<span class="command">ip addr</span>               <span class="comment">! Mostra IPs (ou ifconfig)</span>
+<span class="command">ip route</span>              <span class="comment">! Tabela de rotas</span>
+<span class="command">ping</span> HOST              <span class="comment">! Testa conectividade</span>
+<span class="command">traceroute</span> HOST        <span class="comment">! Mostra rota</span>
+<span class="command">dig</span> HOST               <span class="comment">! Consulta DNS detalhada</span>
+                    </code>
+                </div>
+
+                <div class="info-box tip">
+                    <div class="info-box-title">
+                        <i class="fas fa-check-circle"></i> Dicas de Uso
+                    </div>
+                    <ul>
+                        <li>Use <strong>Tab</strong> para autocompletar comandos</li>
+                        <li>Use <strong>?</strong> após qualquer comando para ver opções</li>
+                        <li>Comandos podem ser abreviados: <code>sh run</code> = <code>show running-config</code></li>
+                        <li><strong>Ctrl+C</strong> cancela um comando em execução</li>
+                        <li><strong>Ctrl+Z</strong> volta ao modo privilegiado de qualquer lugar</li>
+                    </ul>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Comandos essenciais Cisco: <code>enable</code>, <code>configure terminal</code>, <code>show running-config</code>, <code>show ip interface brief</code>, <code>copy run start</code>. No Windows: <code>ipconfig</code>, <code>ping</code>, <code>tracert</code>, <code>nslookup</code>. Use <strong>?</strong> para ajuda e <strong>Tab</strong> para autocompletar. Sempre salve após configurar!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MÓDULO: INFRAESTRUTURA ==================== -->
+        <section class="section" id="infraestrutura">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-plug"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Infraestrutura de Rede</h2>
+                    <p class="section-subtitle">Cabeamento, fibra óptica e padrões físicos</p>
+                </div>
+            </div>
+
+            <!-- Cabeamento Estruturado -->
+            <div class="card" id="cabeamento">
+                <h2 class="card-title">
+                    <i class="fas fa-project-diagram"></i>
+                    Cabeamento Estruturado
+                </h2>
+
+                <h3>🧠 O que é Cabeamento Estruturado?</h3>
+                <p><strong>Cabeamento estruturado</strong> é um sistema padronizado de cabos, conectores e organizadores que forma a infraestrutura física de uma rede. Segue normas técnicas que garantem organização, desempenho e facilidade de manutenção.</p>
+
+                <p>Ao contrário de cabos jogados sem critério, o cabeamento estruturado é <strong>planejado</strong>, <strong>documentado</strong> e <strong>organizado</strong>, permitindo expansões e alterações sem refazer toda a infraestrutura.</p>
+
+                <h3>Normas de Referência</h3>
+                <ul>
+                    <li><strong>TIA/EIA-568:</strong> Padrão americano de cabeamento</li>
+                    <li><strong>ISO/IEC 11801:</strong> Padrão internacional</li>
+                    <li><strong>NBR 14565:</strong> Norma brasileira da ABNT</li>
+                </ul>
+
+                <h3>Subsistemas do Cabeamento Estruturado</h3>
+
+                <h4>1. Entrada de Facilidades (EF)</h4>
+                <p>Ponto onde os serviços externos (internet, telefonia) entram no edifício. Inclui a sala de equipamentos do provedor.</p>
+
+                <h4>2. Sala de Equipamentos (ER)</h4>
+                <p>Local onde ficam os equipamentos principais: servidores, switches core, roteadores, painéis de distribuição. Deve ter controle de temperatura e acesso restrito.</p>
+
+                <h4>3. Backbone (Cabeamento Vertical)</h4>
+                <p>Cabos que conectam diferentes andares ou prédios. Geralmente usa fibra óptica para grandes distâncias e velocidades.</p>
+
+                <h4>4. Cabeamento Horizontal</h4>
+                <p>Cabos que vão do armário de telecomunicações (TR) até as tomadas nas áreas de trabalho. Limite de <strong>90 metros</strong> de cabo permanente.</p>
+
+                <h4>5. Armário de Telecomunicações (TR)</h4>
+                <p>Rack em cada andar que abriga switches, patch panels e conexões do cabeamento horizontal.</p>
+
+                <h4>6. Área de Trabalho (WA)</h4>
+                <p>O ponto final onde o usuário conecta seu equipamento. Inclui as tomadas de rede e patch cords.</p>
+
+                <h3>Componentes Principais</h3>
+
+                <h4>Patch Panel</h4>
+                <p>Painel onde terminam os cabos permanentes. Permite organização e facilita a troca de conexões sem mexer na fiação principal.</p>
+
+                <h4>Patch Cord</h4>
+                <p>Cabos curtos e flexíveis usados para conectar o patch panel ao switch ou o computador à tomada.</p>
+
+                <h4>Tomada de Rede (Outlet)</h4>
+                <p>Ponto de conexão na área de trabalho. Geralmente do tipo RJ-45 para redes Ethernet.</p>
+
+                <h4>Rack</h4>
+                <p>Armário metálico padronizado (19 polegadas) onde ficam equipamentos e patch panels.</p>
+
+                <h3>Regra dos 90 metros</h3>
+                <p>O cabeamento horizontal não pode exceder <strong>90 metros</strong> de cabo permanente entre o TR e a tomada. Os outros 10 metros são reservados para patch cords (5m de cada lado), totalizando o limite de <strong>100 metros</strong> do padrão Ethernet.</p>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático: Escritório de 3 Andares
+                    </div>
+                    <ul>
+                        <li><strong>Térreo:</strong> Sala de equipamentos com servidores e switch core</li>
+                        <li><strong>Backbone:</strong> Fibra óptica conecta o térreo aos andares 2 e 3</li>
+                        <li><strong>Cada andar:</strong> TR (rack com switch) + cabeamento horizontal até cada mesa</li>
+                        <li><strong>Cada mesa:</strong> 2 tomadas de rede (dados e voz)</li>
+                        <li>Total: Cerca de 200 pontos de rede bem organizados e documentados</li>
+                    </ul>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Cabeamento estruturado é um sistema organizado seguindo normas (TIA/EIA-568). Divide-se em: entrada de facilidades, sala de equipamentos, backbone (vertical), cabeamento horizontal (até 90m), armários de telecomunicações e área de trabalho. Componentes: patch panels, racks, patch cords e tomadas.</p>
+                </div>
+            </div>
+
+            <!-- Fibra Óptica -->
+            <div class="card" id="fibra-optica">
+                <h2 class="card-title">
+                    <i class="fas fa-bolt"></i>
+                    Fibra Óptica
+                </h2>
+
+                <h3>🧠 O que é Fibra Óptica?</h3>
+                <p>A <strong>fibra óptica</strong> é um meio de transmissão que usa <strong>luz</strong> para transportar dados, em vez de sinais elétricos. É composta por filamentos de vidro ou plástico extremamente finos (do diâmetro de um fio de cabelo) por onde a luz viaja.</p>
+
+                <h3>Vantagens da Fibra Óptica</h3>
+                <ul>
+                    <li><strong>Altíssima velocidade:</strong> Transmite terabits por segundo</li>
+                    <li><strong>Grande distância:</strong> Pode alcançar dezenas de quilômetros sem perda significativa</li>
+                    <li><strong>Imunidade eletromagnética:</strong> Não sofre interferência de motores, raios, etc.</li>
+                    <li><strong>Segurança:</strong> Difícil de interceptar (não emite sinais eletromagnéticos)</li>
+                    <li><strong>Menor atenuação:</strong> Perde menos sinal ao longo da distância</li>
+                    <li><strong>Leveza e finura:</strong> Mais fácil de instalar em espaços apertados</li>
+                </ul>
+
+                <h3>Desvantagens</h3>
+                <ul>
+                    <li><strong>Custo maior:</strong> Equipamentos e conectores mais caros</li>
+                    <li><strong>Fragilidade:</strong> O vidro pode quebrar se manuseado incorretamente</li>
+                    <li><strong>Instalação especializada:</strong> Requer técnicos e equipamentos específicos</li>
+                </ul>
+
+                <h3>Componentes da Fibra</h3>
+                <ul>
+                    <li><strong>Núcleo (Core):</strong> Parte central onde a luz viaja (vidro ou plástico)</li>
+                    <li><strong>Casca (Cladding):</strong> Reveste o núcleo e reflete a luz de volta para ele</li>
+                    <li><strong>Revestimento:</strong> Camada protetora externa</li>
+                </ul>
+
+                <h3>Tipos de Fibra</h3>
+
+                <h4>Fibra Monomodo (Single-Mode)</h4>
+                <ul>
+                    <li>Núcleo muito fino (8-10 micrômetros)</li>
+                    <li>Um único raio de luz viaja em linha reta</li>
+                    <li>Alcance muito longo (até 100 km)</li>
+                    <li>Usado em: backbones, conexões entre cidades, provedores</li>
+                    <li>Cor do conector: geralmente amarelo</li>
+                </ul>
+
+                <h4>Fibra Multimodo (Multi-Mode)</h4>
+                <ul>
+                    <li>Núcleo mais largo (50-62.5 micrômetros)</li>
+                    <li>Múltiplos raios de luz viajam em ângulos diferentes</li>
+                    <li>Alcance menor (até 2 km)</li>
+                    <li>Usado em: LANs, data centers, curtas distâncias</li>
+                    <li>Cor do conector: geralmente laranja ou aqua</li>
+                </ul>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Monomodo</th>
+                            <th>Multimodo</th>
+                        </tr>
+                        <tr>
+                            <td>Diâmetro do núcleo</td>
+                            <td>8-10 µm</td>
+                            <td>50-62.5 µm</td>
+                        </tr>
+                        <tr>
+                            <td>Distância máxima</td>
+                            <td>Até 100 km</td>
+                            <td>Até 2 km</td>
+                        </tr>
+                        <tr>
+                            <td>Custo</td>
+                            <td>Mais caro</td>
+                            <td>Mais barato</td>
+                        </tr>
+                        <tr>
+                            <td>Velocidade</td>
+                            <td>Muito alta</td>
+                            <td>Alta</td>
+                        </tr>
+                        <tr>
+                            <td>Uso típico</td>
+                            <td>WANs, telecomunicações</td>
+                            <td>LANs, data centers</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Conectores Comuns</h3>
+                <ul>
+                    <li><strong>SC:</strong> "Push-pull", quadrado, muito usado</li>
+                    <li><strong>LC:</strong> Menor, usado em alta densidade</li>
+                    <li><strong>ST:</strong> "Twist-lock", baioneta</li>
+                    <li><strong>FC:</strong> Rosqueado, usado em ambientes industriais</li>
+                </ul>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Quando você contrata internet fibra óptica em casa:</p>
+                    <ul>
+                        <li>A operadora traz fibra monomodo até o poste/caixa do prédio</li>
+                        <li>Um cabo de "drop" (fibra mais resistente) desce até seu apartamento</li>
+                        <li>O ONU/ONT converte o sinal óptico para elétrico, conectando ao seu roteador</li>
+                        <li>Dentro de casa, você usa cabo Ethernet comum (par trançado)</li>
+                    </ul>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Fibra óptica transmite dados por luz através de filamentos de vidro. Vantagens: velocidade extrema, longa distância, imunidade a interferência. Monomodo = longas distâncias (amarelo). Multimodo = curtas distâncias (laranja/aqua). Conectores comuns: SC, LC, ST. É o futuro (e presente) das telecomunicações.</p>
+                </div>
+            </div>
+
+            <!-- Crimpagem de Cabo -->
+            <div class="card" id="crimpagem">
+                <h2 class="card-title">
+                    <i class="fas fa-tools"></i>
+                    Crimpagem de Cabo de Rede
+                </h2>
+
+                <h3>🧠 O que é Crimpagem?</h3>
+                <p><strong>Crimpagem</strong> é o processo de conectar um conector RJ-45 na ponta de um cabo de rede (par trançado). É uma habilidade essencial para qualquer técnico de redes, permitindo criar cabos sob medida ou reparar cabos danificados.</p>
+
+                <h3>Materiais Necessários</h3>
+                <ul>
+                    <li><strong>Cabo UTP/STP:</strong> Cat5e ou Cat6 são os mais comuns</li>
+                    <li><strong>Conectores RJ-45:</strong> O conector transparente de 8 pinos</li>
+                    <li><strong>Alicate de crimpagem:</strong> Ferramenta que prensa o conector no cabo</li>
+                    <li><strong>Decapador:</strong> Para remover a capa externa do cabo</li>
+                    <li><strong>Testador de cabos:</strong> Para verificar se a crimpagem ficou correta</li>
+                </ul>
+
+                <h3>Passo a Passo da Crimpagem</h3>
+
+                <h4>1. Decapar o cabo</h4>
+                <p>Remova cerca de 2-3 cm da capa externa, expondo os 4 pares de fios trançados. Cuidado para não cortar os fios internos.</p>
+
+                <h4>2. Destrançar e organizar</h4>
+                <p>Separe os 8 fios e organize-os na sequência correta (T568A ou T568B). Alinhe-os lado a lado, bem retos e paralelos.</p>
+
+                <h4>3. Cortar na medida</h4>
+                <p>Corte os fios para que fiquem todos do mesmo tamanho, com cerca de 1,2 cm de comprimento exposto.</p>
+
+                <h4>4. Inserir no conector</h4>
+                <p>Segure o conector RJ-45 com a trava para baixo. Insira os fios mantendo a ordem. Os fios devem chegar até o final do conector.</p>
+
+                <h4>5. Crimpar</h4>
+                <p>Coloque o conector no alicate de crimpagem e pressione firmemente. Isso crava os contatos metálicos nos fios.</p>
+
+                <h4>6. Testar</h4>
+                <p>Use um testador de cabos. Todas as 8 luzes devem acender na sequência correta.</p>
+
+                <h3>Tipos de Cabo</h3>
+
+                <h4>Cabo Direto (Straight-through)</h4>
+                <p>Ambas as pontas usam o <strong>mesmo padrão</strong> (T568A-T568A ou T568B-T568B). Usado para conectar dispositivos diferentes:</p>
+                <ul>
+                    <li>PC → Switch</li>
+                    <li>Switch → Roteador</li>
+                    <li>Access Point → Switch</li>
+                </ul>
+
+                <h4>Cabo Crossover (Cruzado)</h4>
+                <p>Cada ponta usa um <strong>padrão diferente</strong> (T568A-T568B). Usado para conectar dispositivos iguais:</p>
+                <ul>
+                    <li>PC → PC</li>
+                    <li>Switch → Switch</li>
+                </ul>
+                <p><em>Obs: Equipamentos modernos com Auto-MDIX detectam automaticamente e não precisam de cabo crossover.</em></p>
+
+                <div class="info-box warning">
+                    <div class="info-box-title">
+                        <i class="fas fa-exclamation-triangle"></i> Erros Comuns
+                    </div>
+                    <ul>
+                        <li>Fios na ordem errada — refaça com cuidado</li>
+                        <li>Fios não chegaram até o final do conector — empurre mais</li>
+                        <li>Capa externa não entrou no conector — a trava deve prender a capa, não só os fios</li>
+                        <li>Crimpagem fraca — prense com força total</li>
+                    </ul>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Crimpagem conecta o RJ-45 ao cabo de rede. Passos: decapar, organizar na sequência correta (T568A ou T568B), cortar, inserir, crimpar e testar. Cabo direto: mesma ordem nas duas pontas (dispositivos diferentes). Cabo crossover: ordens diferentes (dispositivos iguais). Sempre teste o cabo após crimpar.</p>
+                </div>
+            </div>
+
+            <!-- Padrão T568A -->
+            <div class="card" id="t568a">
+                <h2 class="card-title">
+                    <i class="fas fa-palette"></i>
+                    Padrão T568A
+                </h2>
+
+                <h3>🧠 O que é o Padrão T568A?</h3>
+                <p>O <strong>T568A</strong> é um dos dois padrões de pinagem (ordem dos fios) para conectores RJ-45, definido pela norma TIA/EIA-568. Ele especifica em qual posição cada fio colorido deve ficar.</p>
+
+                <h3>Ordem dos Fios (T568A)</h3>
+                <p>Olhando para o conector RJ-45 com a <strong>trava para baixo</strong> e os contatos metálicos para cima:</p>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Pino</th>
+                            <th>Cor</th>
+                            <th>Função</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td style="background: #fff; color: #00a651; padding: 5px 10px; border-radius: 4px;">⬜ Branco-Verde</td>
+                            <td>TX+</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td style="background: #00a651; color: white; padding: 5px 10px; border-radius: 4px;">🟩 Verde</td>
+                            <td>TX-</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td style="background: #fff; color: #f7941d; padding: 5px 10px; border-radius: 4px;">⬜ Branco-Laranja</td>
+                            <td>RX+</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td style="background: #0072bc; color: white; padding: 5px 10px; border-radius: 4px;">🟦 Azul</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td style="background: #fff; color: #0072bc; padding: 5px 10px; border-radius: 4px;">⬜ Branco-Azul</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td style="background: #f7941d; color: white; padding: 5px 10px; border-radius: 4px;">🟧 Laranja</td>
+                            <td>RX-</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td style="background: #fff; color: #8b4513; padding: 5px 10px; border-radius: 4px;">⬜ Branco-Marrom</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td style="background: #8b4513; color: white; padding: 5px 10px; border-radius: 4px;">🟫 Marrom</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Macete para Lembrar (T568A)</h3>
+                <div class="code-block">
+                    <code>
+<span class="comment">Sequência T568A:</span>
+Branco-Verde, Verde, Branco-Laranja, Azul, Branco-Azul, Laranja, Branco-Marrom, Marrom
+
+<span class="comment">Dica: "VERDE começa, LARANJA no meio"</span>
+                    </code>
+                </div>
+
+                <h3>Quando Usar T568A?</h3>
+                <ul>
+                    <li>É o padrão preferido para <strong>instalações governamentais</strong> nos EUA</li>
+                    <li>Usado em <strong>cabeamento estruturado residencial</strong></li>
+                    <li>Compatível com sistemas de telefonia (pares centrais)</li>
+                    <li>Para criar cabo <strong>crossover</strong>, use T568A em uma ponta e T568B na outra</li>
+                </ul>
+
+                <div class="info-box tip">
+                    <div class="info-box-title">
+                        <i class="fas fa-check-circle"></i> Dica
+                    </div>
+                    <p>A diferença entre T568A e T568B é apenas a troca dos pares verde e laranja. Se você lembrar um, automaticamente sabe o outro invertendo essas cores.</p>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>T568A é um padrão de pinagem RJ-45 onde o par verde vem primeiro: Branco-Verde, Verde, Branco-Laranja, Azul, Branco-Azul, Laranja, Branco-Marrom, Marrom. Usado em instalações governamentais e residenciais. Combinado com T568B na outra ponta, cria um cabo crossover.</p>
+                </div>
+            </div>
+
+            <!-- Padrão T568B -->
+            <div class="card" id="t568b">
+                <h2 class="card-title">
+                    <i class="fas fa-palette"></i>
+                    Padrão T568B
+                </h2>
+
+                <h3>🧠 O que é o Padrão T568B?</h3>
+                <p>O <strong>T568B</strong> é o segundo padrão de pinagem para conectores RJ-45. É o <strong>mais utilizado comercialmente</strong>, especialmente em redes corporativas e ambientes empresariais.</p>
+
+                <h3>Ordem dos Fios (T568B)</h3>
+                <p>Olhando para o conector RJ-45 com a <strong>trava para baixo</strong> e os contatos metálicos para cima:</p>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Pino</th>
+                            <th>Cor</th>
+                            <th>Função</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td style="background: #fff; color: #f7941d; padding: 5px 10px; border-radius: 4px;">⬜ Branco-Laranja</td>
+                            <td>TX+</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td style="background: #f7941d; color: white; padding: 5px 10px; border-radius: 4px;">🟧 Laranja</td>
+                            <td>TX-</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td style="background: #fff; color: #00a651; padding: 5px 10px; border-radius: 4px;">⬜ Branco-Verde</td>
+                            <td>RX+</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td style="background: #0072bc; color: white; padding: 5px 10px; border-radius: 4px;">🟦 Azul</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td style="background: #fff; color: #0072bc; padding: 5px 10px; border-radius: 4px;">⬜ Branco-Azul</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td style="background: #00a651; color: white; padding: 5px 10px; border-radius: 4px;">🟩 Verde</td>
+                            <td>RX-</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td style="background: #fff; color: #8b4513; padding: 5px 10px; border-radius: 4px;">⬜ Branco-Marrom</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td style="background: #8b4513; color: white; padding: 5px 10px; border-radius: 4px;">🟫 Marrom</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Macete para Lembrar (T568B)</h3>
+                <div class="code-block">
+                    <code>
+<span class="comment">Sequência T568B:</span>
+Branco-Laranja, Laranja, Branco-Verde, Azul, Branco-Azul, Verde, Branco-Marrom, Marrom
+
+<span class="comment">Dica: "LARANJA começa, VERDE no meio"</span>
+                    </code>
+                </div>
+
+                <h3>Comparação T568A vs T568B</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Pino</th>
+                            <th>T568A</th>
+                            <th>T568B</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Branco-Verde</td>
+                            <td>Branco-Laranja</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Verde</td>
+                            <td>Laranja</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Branco-Laranja</td>
+                            <td>Branco-Verde</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td colspan="2" style="text-align: center;">Azul (igual)</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td colspan="2" style="text-align: center;">Branco-Azul (igual)</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Laranja</td>
+                            <td>Verde</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td colspan="2" style="text-align: center;">Branco-Marrom (igual)</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td colspan="2" style="text-align: center;">Marrom (igual)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Quando Usar T568B?</h3>
+                <ul>
+                    <li>É o padrão <strong>mais comum em empresas</strong></li>
+                    <li>Preferido para <strong>ambientes comerciais e corporativos</strong></li>
+                    <li>Compatível com instalações mais antigas</li>
+                    <li>Se a rede existente usa T568B, mantenha o padrão por consistência</li>
+                </ul>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Você vai instalar 50 pontos de rede em um escritório novo:</p>
+                    <ul>
+                        <li>Escolha <strong>um único padrão</strong> para toda a instalação (recomendo T568B)</li>
+                        <li>Documente o padrão escolhido</li>
+                        <li>Use o <strong>mesmo padrão nas duas pontas</strong> de cada cabo para criar cabos diretos</li>
+                        <li>Equipamentos modernos com Auto-MDIX funcionarão independente do padrão</li>
+                    </ul>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>T568B é o padrão mais usado comercialmente, onde o par laranja vem primeiro: Branco-Laranja, Laranja, Branco-Verde, Azul, Branco-Azul, Verde, Branco-Marrom, Marrom. A diferença para T568A é apenas a inversão dos pares verde e laranja. Escolha um padrão e mantenha consistência em toda a instalação.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MÓDULO: ENDEREÇAMENTO IP ==================== -->
+        <section class="section" id="enderecamento-ip">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Endereçamento IP</h2>
+                    <p class="section-subtitle">Classes e estrutura de endereços IP</p>
+                </div>
+            </div>
+
+            <!-- Classes de Endereçamento IP -->
+            <div class="card" id="classes-ip">
+                <h2 class="card-title">
+                    <i class="fas fa-sitemap"></i>
+                    Classes de Endereçamento IP
+                </h2>
+
+                <h3>🧠 O que são Classes de IP?</h3>
+                <p>O <strong>endereçamento IP classful</strong> foi o sistema original de organização de endereços IPv4, dividindo-os em classes (A, B, C, D, E) baseadas no primeiro octeto. Embora hoje usemos CIDR (Classless), entender as classes é fundamental para compreender redes.</p>
+
+                <h3>Estrutura do Endereço IPv4</h3>
+                <p>Um endereço IPv4 tem 32 bits, divididos em 4 octetos de 8 bits cada:</p>
+                <div class="code-block">
+                    <code>
+192.168.1.100
+
+Em binário: 11000000.10101000.00000001.01100100
+             Octeto1   Octeto2   Octeto3   Octeto4
+                    </code>
+                </div>
+                <p>Cada octeto vai de 0 a 255 (2⁸ = 256 valores).</p>
+
+                <h3>As Classes de IP</h3>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Classe</th>
+                            <th>Primeiro Octeto</th>
+                            <th>Máscara Padrão</th>
+                            <th>Redes</th>
+                            <th>Hosts por Rede</th>
+                        </tr>
+                        <tr>
+                            <td><strong>A</strong></td>
+                            <td>1 - 126</td>
+                            <td>255.0.0.0 (/8)</td>
+                            <td>128</td>
+                            <td>~16 milhões</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B</strong></td>
+                            <td>128 - 191</td>
+                            <td>255.255.0.0 (/16)</td>
+                            <td>16.384</td>
+                            <td>~65.000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>C</strong></td>
+                            <td>192 - 223</td>
+                            <td>255.255.255.0 (/24)</td>
+                            <td>~2 milhões</td>
+                            <td>254</td>
+                        </tr>
+                        <tr>
+                            <td><strong>D</strong></td>
+                            <td>224 - 239</td>
+                            <td>-</td>
+                            <td colspan="2">Multicast (grupos)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E</strong></td>
+                            <td>240 - 255</td>
+                            <td>-</td>
+                            <td colspan="2">Reservado (experimental)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Detalhando Cada Classe</h3>
+
+                <h4>Classe A (1.0.0.0 a 126.255.255.255)</h4>
+                <p>Destinada a organizações muito grandes. O primeiro octeto identifica a rede; os três últimos identificam hosts.</p>
+                <ul>
+                    <li><strong>Exemplo:</strong> 10.x.x.x (rede 10, qualquer host)</li>
+                    <li><strong>Hosts:</strong> 2²⁴ - 2 = 16.777.214 por rede</li>
+                </ul>
+
+                <h4>Classe B (128.0.0.0 a 191.255.255.255)</h4>
+                <p>Para organizações médias. Os dois primeiros octetos identificam a rede; os dois últimos identificam hosts.</p>
+                <ul>
+                    <li><strong>Exemplo:</strong> 172.16.x.x (rede 172.16, qualquer host)</li>
+                    <li><strong>Hosts:</strong> 2¹⁶ - 2 = 65.534 por rede</li>
+                </ul>
+
+                <h4>Classe C (192.0.0.0 a 223.255.255.255)</h4>
+                <p>Para organizações pequenas. Os três primeiros octetos identificam a rede; apenas o último identifica hosts.</p>
+                <ul>
+                    <li><strong>Exemplo:</strong> 192.168.1.x (rede 192.168.1, até 254 hosts)</li>
+                    <li><strong>Hosts:</strong> 2⁸ - 2 = 254 por rede</li>
+                </ul>
+
+                <h3>Endereços Especiais</h3>
+
+                <h4>Endereço de Rede</h4>
+                <p>É o primeiro endereço da rede, com todos os bits de host em 0. Não pode ser atribuído a um dispositivo.</p>
+                <div class="code-block">
+                    <code>
+Rede 192.168.1.0/24 → Endereço de rede: 192.168.1.0
+                    </code>
+                </div>
+
+                <h4>Endereço de Broadcast</h4>
+                <p>É o último endereço da rede, com todos os bits de host em 1. Envia para todos os dispositivos da rede.</p>
+                <div class="code-block">
+                    <code>
+Rede 192.168.1.0/24 → Broadcast: 192.168.1.255
+                    </code>
+                </div>
+
+                <h4>127.0.0.0/8 (Loopback)</h4>
+                <p>Reservado para testes locais. 127.0.0.1 é o "localhost" — o próprio computador.</p>
+
+                <h3>Endereços IP Privados</h3>
+                <p>São reservados para uso interno em redes locais, não roteáveis na internet:</p>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Classe</th>
+                            <th>Faixa Privada</th>
+                            <th>Uso Comum</th>
+                        </tr>
+                        <tr>
+                            <td>A</td>
+                            <td>10.0.0.0 - 10.255.255.255</td>
+                            <td>Grandes corporações</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>172.16.0.0 - 172.31.255.255</td>
+                            <td>Médias empresas</td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>192.168.0.0 - 192.168.255.255</td>
+                            <td>Redes domésticas e pequenas</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Sua rede doméstica provavelmente usa 192.168.1.0/24 (Classe C privado):</p>
+                    <ul>
+                        <li><strong>Endereço de rede:</strong> 192.168.1.0 (não usar)</li>
+                        <li><strong>Gateway (roteador):</strong> 192.168.1.1</li>
+                        <li><strong>Hosts disponíveis:</strong> 192.168.1.2 a 192.168.1.254</li>
+                        <li><strong>Broadcast:</strong> 192.168.1.255 (não usar)</li>
+                        <li><strong>Total de hosts:</strong> 254 dispositivos</li>
+                    </ul>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>IPv4 usa classes A, B, C, D, E baseadas no primeiro octeto. Classe A (1-126) = redes gigantes. Classe B (128-191) = redes médias. Classe C (192-223) = redes pequenas. Endereços privados (10.x, 172.16-31.x, 192.168.x) são para uso interno. Cada rede tem endereço de rede (primeiro) e broadcast (último) reservados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MÓDULO: REDES SEM FIO ==================== -->
+        <section class="section" id="redes-sem-fio">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-wifi"></i>
+                </div>
+                <div>
+                    <h2 class="section-title">Redes Sem Fio</h2>
+                    <p class="section-subtitle">Conceitos, tipos e configuração de Wi-Fi</p>
+                </div>
+            </div>
+
+            <!-- Conceito de Wi-Fi -->
+            <div class="card" id="conceito-wifi">
+                <h2 class="card-title">
+                    <i class="fas fa-broadcast-tower"></i>
+                    Conceito de Rede Sem Fio (Wi-Fi)
+                </h2>
+
+                <h3>🧠 O que é Wi-Fi?</h3>
+                <p><strong>Wi-Fi (Wireless Fidelity)</strong> é uma tecnologia de rede sem fio que permite a conexão de dispositivos à rede local e à internet usando <strong>ondas de rádio</strong>, eliminando a necessidade de cabos físicos.</p>
+
+                <p>O Wi-Fi segue o padrão <strong>IEEE 802.11</strong>, que define como os dispositivos devem se comunicar sem fio. É a tecnologia por trás da conexão sem fio do seu celular, notebook, smart TV e outros dispositivos.</p>
+
+                <h3>Como Funciona?</h3>
+                <ol>
+                    <li>Um <strong>Access Point (AP)</strong> ou roteador wireless emite ondas de rádio</li>
+                    <li>Dispositivos com antena Wi-Fi detectam essas ondas</li>
+                    <li>O dispositivo se autentica (senha) e se associa ao AP</li>
+                    <li>Dados são convertidos em sinais de rádio para transmissão</li>
+                    <li>O AP conecta o tráfego à rede cabeada/internet</li>
+                </ol>
+
+                <h3>Padrões Wi-Fi (IEEE 802.11)</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Padrão</th>
+                            <th>Nome Comercial</th>
+                            <th>Frequência</th>
+                            <th>Velocidade Máx.</th>
+                            <th>Ano</th>
+                        </tr>
+                        <tr>
+                            <td>802.11b</td>
+                            <td>-</td>
+                            <td>2.4 GHz</td>
+                            <td>11 Mbps</td>
+                            <td>1999</td>
+                        </tr>
+                        <tr>
+                            <td>802.11a</td>
+                            <td>-</td>
+                            <td>5 GHz</td>
+                            <td>54 Mbps</td>
+                            <td>1999</td>
+                        </tr>
+                        <tr>
+                            <td>802.11g</td>
+                            <td>-</td>
+                            <td>2.4 GHz</td>
+                            <td>54 Mbps</td>
+                            <td>2003</td>
+                        </tr>
+                        <tr>
+                            <td>802.11n</td>
+                            <td>Wi-Fi 4</td>
+                            <td>2.4/5 GHz</td>
+                            <td>600 Mbps</td>
+                            <td>2009</td>
+                        </tr>
+                        <tr>
+                            <td>802.11ac</td>
+                            <td>Wi-Fi 5</td>
+                            <td>5 GHz</td>
+                            <td>6.9 Gbps</td>
+                            <td>2013</td>
+                        </tr>
+                        <tr>
+                            <td>802.11ax</td>
+                            <td>Wi-Fi 6/6E</td>
+                            <td>2.4/5/6 GHz</td>
+                            <td>9.6 Gbps</td>
+                            <td>2019</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Frequências: 2.4 GHz vs 5 GHz</h3>
+
+                <h4>2.4 GHz</h4>
+                <ul>
+                    <li><strong>Vantagem:</strong> Maior alcance, atravessa melhor paredes</li>
+                    <li><strong>Desvantagem:</strong> Mais congestionado (muitos dispositivos usam), mais interferência</li>
+                    <li>Apenas 3 canais não sobrepostos (1, 6, 11)</li>
+                </ul>
+
+                <h4>5 GHz</h4>
+                <ul>
+                    <li><strong>Vantagem:</strong> Mais canais, menos interferência, maior velocidade</li>
+                    <li><strong>Desvantagem:</strong> Menor alcance, pior em atravessar obstáculos</li>
+                    <li>23 canais não sobrepostos</li>
+                </ul>
+
+                <h3>Segurança Wi-Fi</h3>
+                <ul>
+                    <li><strong>WEP:</strong> Obsoleto e inseguro. NUNCA usar.</li>
+                    <li><strong>WPA:</strong> Melhorou a segurança, mas também vulnerável.</li>
+                    <li><strong>WPA2:</strong> Padrão atual, usa AES. Seguro quando configurado corretamente.</li>
+                    <li><strong>WPA3:</strong> Mais recente, ainda mais seguro. Recomendado quando disponível.</li>
+                </ul>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Em um escritório moderno com roteador dual-band:</p>
+                    <ul>
+                        <li><strong>2.4 GHz:</strong> Para dispositivos distantes ou que precisam atravessar paredes (sensores IoT, impressoras em outro cômodo)</li>
+                        <li><strong>5 GHz:</strong> Para notebooks e celulares próximos que precisam de velocidade (videoconferência, streaming)</li>
+                    </ul>
+                    <p>Muitos roteadores criam duas redes: "MinhaRede" (2.4 GHz) e "MinhaRede_5G" (5 GHz).</p>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Wi-Fi é comunicação sem fio via ondas de rádio (IEEE 802.11). Evoluiu do 802.11b (11 Mbps) até Wi-Fi 6 (9.6 Gbps). Frequência 2.4 GHz = maior alcance, mais interferência. 5 GHz = maior velocidade, menor alcance. Sempre use WPA2 ou WPA3 para segurança.</p>
+                </div>
+            </div>
+
+            <!-- Ondas Eletromagnéticas -->
+            <div class="card" id="ondas-eletromagneticas">
+                <h2 class="card-title">
+                    <i class="fas fa-wave-square"></i>
+                    Ondas Eletromagnéticas
+                </h2>
+
+                <h3>🧠 O que são Ondas Eletromagnéticas?</h3>
+                <p><strong>Ondas eletromagnéticas</strong> são perturbações nos campos elétrico e magnético que se propagam pelo espaço, transportando energia. Diferente de ondas sonoras, não precisam de um meio material — podem viajar no vácuo.</p>
+
+                <p>O Wi-Fi usa <strong>ondas de rádio</strong>, que são um tipo de onda eletromagnética com frequências específicas.</p>
+
+                <h3>Características das Ondas</h3>
+
+                <h4>Frequência (Hz)</h4>
+                <p>Número de oscilações por segundo. Medida em Hertz (Hz). Wi-Fi usa Gigahertz (GHz) — bilhões de oscilações por segundo.</p>
+
+                <h4>Comprimento de Onda</h4>
+                <p>Distância entre dois picos consecutivos. Frequências mais altas = comprimentos de onda menores.</p>
+
+                <h4>Amplitude</h4>
+                <p>Altura da onda, relacionada à intensidade/potência do sinal.</p>
+
+                <h3>Espectro Eletromagnético</h3>
+                <p>O espectro vai de ondas de rádio (baixa frequência) até raios gama (alta frequência):</p>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Tipo de Onda</th>
+                            <th>Frequência</th>
+                            <th>Uso em Redes</th>
+                        </tr>
+                        <tr>
+                            <td>Ondas de Rádio</td>
+                            <td>3 kHz - 300 GHz</td>
+                            <td>Wi-Fi, Bluetooth, Celular</td>
+                        </tr>
+                        <tr>
+                            <td>Micro-ondas</td>
+                            <td>300 MHz - 300 GHz</td>
+                            <td>Wi-Fi (2.4/5 GHz), Satélite</td>
+                        </tr>
+                        <tr>
+                            <td>Infravermelho</td>
+                            <td>300 GHz - 400 THz</td>
+                            <td>Controles remotos, IrDA antigo</td>
+                        </tr>
+                        <tr>
+                            <td>Luz Visível</td>
+                            <td>400 THz - 800 THz</td>
+                            <td>Li-Fi (experimental), Fibra óptica</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3>Comportamento das Ondas de Rádio</h3>
+
+                <h4>Reflexão</h4>
+                <p>Ondas "batem" em superfícies metálicas e voltam. Pode causar interferência ou ser usada para redirecionar sinal.</p>
+
+                <h4>Refração</h4>
+                <p>Mudança de direção ao passar por materiais diferentes (como entrar em um edifício).</p>
+
+                <h4>Difração</h4>
+                <p>Capacidade de contornar obstáculos. Frequências mais baixas (2.4 GHz) difratam melhor.</p>
+
+                <h4>Absorção</h4>
+                <p>Materiais absorvem energia da onda. Paredes, móveis e pessoas atenuam o sinal.</p>
+
+                <h4>Interferência</h4>
+                <p>Outras ondas na mesma frequência (micro-ondas, Bluetooth, outros Wi-Fi) podem causar colisões.</p>
+
+                <h3>Relação Frequência x Penetração</h3>
+                <ul>
+                    <li><strong>Frequências mais baixas (2.4 GHz):</strong> Penetram melhor em paredes, maior alcance</li>
+                    <li><strong>Frequências mais altas (5 GHz):</strong> Penetram menos, menor alcance, mas maior capacidade de dados</li>
+                </ul>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Por que o sinal do Wi-Fi enfraquece em certos cômodos?</p>
+                    <ul>
+                        <li><strong>Paredes de concreto:</strong> Absorvem muito sinal</li>
+                        <li><strong>Espelhos e metais:</strong> Refletem as ondas</li>
+                        <li><strong>Aquários:</strong> Água absorve ondas de 2.4 GHz</li>
+                        <li><strong>Micro-ondas funcionando:</strong> Opera em 2.4 GHz, causa interferência</li>
+                    </ul>
+                    <p>Solução: posicionar o roteador centralmente, longe de metais e eletrodomésticos.</p>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Ondas eletromagnéticas transportam energia sem fio. Wi-Fi usa ondas de rádio em 2.4 GHz e 5 GHz. Ondas sofrem reflexão (metais), absorção (paredes), difração e interferência. Frequências baixas = maior alcance, menor velocidade. Frequências altas = menor alcance, maior velocidade.</p>
+                </div>
+            </div>
+
+            <!-- Tipos de Rede Sem Fio -->
+            <div class="card" id="tipos-rede-sem-fio">
+                <h2 class="card-title">
+                    <i class="fas fa-th-list"></i>
+                    Tipos de Rede Sem Fio
+                </h2>
+
+                <h3>🧠 Classificação por Alcance</h3>
+                <p>Redes sem fio são classificadas principalmente pelo seu <strong>alcance geográfico</strong>:</p>
+
+                <h3>WPAN (Wireless Personal Area Network)</h3>
+                <p>Redes pessoais de curto alcance, tipicamente até 10 metros.</p>
+                <ul>
+                    <li><strong>Bluetooth:</strong> Fones de ouvido, teclados, mouses (até 10m)</li>
+                    <li><strong>Zigbee:</strong> Automação residencial, sensores IoT</li>
+                    <li><strong>NFC:</strong> Pagamentos por aproximação (poucos centímetros)</li>
+                    <li><strong>IrDA:</strong> Controles remotos (obsoleto para dados)</li>
+                </ul>
+
+                <h3>WLAN (Wireless Local Area Network)</h3>
+                <p>Redes locais sem fio, alcance de dezenas a centenas de metros.</p>
+                <ul>
+                    <li><strong>Wi-Fi (802.11):</strong> O mais comum para casas e escritórios</li>
+                    <li>Alcance típico: 50-100m em ambientes internos</li>
+                    <li>Velocidades: até 9.6 Gbps (Wi-Fi 6)</li>
+                </ul>
+
+                <h3>WMAN (Wireless Metropolitan Area Network)</h3>
+                <p>Redes metropolitanas, cobrindo uma cidade ou região.</p>
+                <ul>
+                    <li><strong>WiMAX (802.16):</strong> Até 50 km de alcance</li>
+                    <li>Usado por provedores de internet em áreas sem fibra</li>
+                    <li>Sendo substituído por 4G/5G</li>
+                </ul>
+
+                <h3>WWAN (Wireless Wide Area Network)</h3>
+                <p>Redes de longa distância, cobertura nacional ou global.</p>
+                <ul>
+                    <li><strong>Celular (3G, 4G LTE, 5G):</strong> Dados móveis</li>
+                    <li><strong>Satélite:</strong> Cobertura em áreas remotas</li>
+                    <li><strong>LoRaWAN:</strong> IoT de longo alcance, baixo consumo</li>
+                </ul>
+
+                <h3>Comparativo</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Alcance</th>
+                            <th>Velocidade</th>
+                            <th>Tecnologia</th>
+                            <th>Exemplo de Uso</th>
+                        </tr>
+                        <tr>
+                            <td>WPAN</td>
+                            <td>~10m</td>
+                            <td>1-3 Mbps</td>
+                            <td>Bluetooth, Zigbee</td>
+                            <td>Fone wireless</td>
+                        </tr>
+                        <tr>
+                            <td>WLAN</td>
+                            <td>~100m</td>
+                            <td>Até 9.6 Gbps</td>
+                            <td>Wi-Fi</td>
+                            <td>Rede do escritório</td>
+                        </tr>
+                        <tr>
+                            <td>WMAN</td>
+                            <td>~50km</td>
+                            <td>~70 Mbps</td>
+                            <td>WiMAX</td>
+                            <td>Internet rural</td>
+                        </tr>
+                        <tr>
+                            <td>WWAN</td>
+                            <td>Global</td>
+                            <td>Até 20 Gbps (5G)</td>
+                            <td>4G/5G</td>
+                            <td>Internet móvel</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p>Seu smartphone usa diferentes tipos de rede sem fio simultaneamente:</p>
+                    <ul>
+                        <li><strong>WPAN:</strong> Conecta seu fone Bluetooth</li>
+                        <li><strong>WLAN:</strong> Conecta ao Wi-Fi de casa</li>
+                        <li><strong>WWAN:</strong> Usa 4G/5G quando sai de casa</li>
+                    </ul>
+                    <p>O celular alterna automaticamente entre WLAN e WWAN conforme disponibilidade.</p>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Redes sem fio por alcance: WPAN (pessoal, ~10m, Bluetooth), WLAN (local, ~100m, Wi-Fi), WMAN (metropolitana, ~50km, WiMAX), WWAN (ampla, global, 4G/5G). Cada tipo atende necessidades específicas de alcance, velocidade e mobilidade.</p>
+                </div>
+            </div>
+
+            <!-- Topologia de Redes Sem Fio -->
+            <div class="card" id="topologia-sem-fio">
+                <h2 class="card-title">
+                    <i class="fas fa-project-diagram"></i>
+                    Topologia de Redes Sem Fio
+                </h2>
+
+                <h3>🧠 O que é Topologia de Rede Sem Fio?</h3>
+                <p>A <strong>topologia</strong> define como os dispositivos estão organizados e se comunicam. Em redes sem fio, há duas topologias principais: <strong>Infraestrutura</strong> e <strong>Ad-Hoc</strong>.</p>
+
+                <h3>Modo Infraestrutura (Infrastructure Mode)</h3>
+                <p>É o modo mais comum. Todos os dispositivos se conectam a um <strong>ponto de acesso (AP)</strong> central, que gerencia a comunicação.</p>
+
+                <h4>Características:</h4>
+                <ul>
+                    <li>Dispositivos não se comunicam diretamente entre si</li>
+                    <li>Todo tráfego passa pelo AP</li>
+                    <li>O AP conecta a rede sem fio à rede cabeada</li>
+                    <li>Gerenciamento centralizado</li>
+                </ul>
+
+                <h4>Componentes:</h4>
+                <ul>
+                    <li><strong>BSS (Basic Service Set):</strong> Um AP e seus clientes associados</li>
+                    <li><strong>BSSID:</strong> Identificador único do AP (endereço MAC)</li>
+                    <li><strong>SSID:</strong> Nome da rede visível aos usuários ("MinhaRede")</li>
+                    <li><strong>ESS (Extended Service Set):</strong> Múltiplos APs com mesmo SSID (roaming)</li>
+                </ul>
+
+                <h3>Modo Ad-Hoc (IBSS)</h3>
+                <p>Dispositivos se conectam <strong>diretamente entre si</strong>, sem AP central.</p>
+
+                <h4>Características:</h4>
+                <ul>
+                    <li>Comunicação ponto-a-ponto direta</li>
+                    <li>Não precisa de infraestrutura</li>
+                    <li>Alcance limitado</li>
+                    <li>Gerenciamento descentralizado</li>
+                </ul>
+
+                <h4>Usos:</h4>
+                <ul>
+                    <li>Compartilhar arquivos entre notebooks sem roteador</li>
+                    <li>Jogos multiplayer local</li>
+                    <li>Redes temporárias em campo</li>
+                </ul>
+
+                <h3>Modo Mesh (Malha)</h3>
+                <p>Variação moderna onde múltiplos nós se interconectam, criando redundância.</p>
+                <ul>
+                    <li>Se um nó falhar, o tráfego encontra outro caminho</li>
+                    <li>Usado em roteadores mesh residenciais (Google Nest, Eero, etc.)</li>
+                    <li>Expande cobertura automaticamente</li>
+                </ul>
+
+                <h3>Comparativo</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Infraestrutura</th>
+                            <th>Ad-Hoc</th>
+                            <th>Mesh</th>
+                        </tr>
+                        <tr>
+                            <td>Ponto central</td>
+                            <td>Sim (AP)</td>
+                            <td>Não</td>
+                            <td>Múltiplos nós</td>
+                        </tr>
+                        <tr>
+                            <td>Alcance</td>
+                            <td>Médio-alto</td>
+                            <td>Baixo</td>
+                            <td>Alto</td>
+                        </tr>
+                        <tr>
+                            <td>Gerenciamento</td>
+                            <td>Centralizado</td>
+                            <td>Descentralizado</td>
+                            <td>Distribuído</td>
+                        </tr>
+                        <tr>
+                            <td>Uso típico</td>
+                            <td>Casa, escritório</td>
+                            <td>Temporário</td>
+                            <td>Casa grande, campus</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático
+                    </div>
+                    <p><strong>Infraestrutura:</strong> Seu celular conecta ao roteador Wi-Fi de casa. Para enviar uma foto ao notebook, os dados vão: Celular → Roteador → Notebook.</p>
+                    <p><strong>Ad-Hoc:</strong> Dois notebooks em um camping sem internet compartilham arquivos diretamente via Wi-Fi Direct.</p>
+                    <p><strong>Mesh:</strong> Casa de 3 andares com 3 roteadores mesh — você se move e o celular troca de nó automaticamente, mantendo a conexão.</p>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Topologias Wi-Fi: <strong>Infraestrutura</strong> = tudo passa pelo AP (mais comum). <strong>Ad-Hoc</strong> = dispositivos se conectam diretamente (temporário). <strong>Mesh</strong> = múltiplos nós interligados (cobertura expandida). BSS é um AP com seus clientes; ESS são múltiplos APs com mesmo SSID.</p>
+                </div>
+            </div>
+
+            <!-- Arquitetura de Rede Sem Fio -->
+            <div class="card" id="arquitetura-sem-fio">
+                <h2 class="card-title">
+                    <i class="fas fa-cubes"></i>
+                    Arquitetura de Rede Sem Fio
+                </h2>
+
+                <h3>🧠 Componentes da Arquitetura Wi-Fi</h3>
+                <p>Uma rede sem fio corporativa ou residencial é composta por diversos elementos que trabalham juntos:</p>
+
+                <h3>Componentes Principais</h3>
+
+                <h4>1. Estações (STA - Stations)</h4>
+                <p>Qualquer dispositivo com adaptador Wi-Fi: notebooks, smartphones, tablets, IoT.</p>
+
+                <h4>2. Access Point (AP)</h4>
+                <p>Dispositivo que cria a rede sem fio e conecta estações à rede cabeada. Em casa, geralmente está integrado ao roteador.</p>
+
+                <h4>3. Controlador Wireless (WLC)</h4>
+                <p>Em ambientes corporativos, gerencia múltiplos APs centralizadamente. Funções:</p>
+                <ul>
+                    <li>Configuração centralizada de todos os APs</li>
+                    <li>Balanceamento de carga entre APs</li>
+                    <li>Gerenciamento de roaming</li>
+                    <li>Segurança e políticas de acesso</li>
+                </ul>
+
+                <h4>4. Antenas</h4>
+                <ul>
+                    <li><strong>Omnidirecionais:</strong> Irradiam em todas as direções (360°)</li>
+                    <li><strong>Direcionais:</strong> Focam o sinal em uma direção específica</li>
+                    <li><strong>Setoriais:</strong> Cobrem um setor (90°, 120°)</li>
+                </ul>
+
+                <h3>Arquitetura Autônoma vs. Centralizada</h3>
+
+                <h4>APs Autônomos (Standalone)</h4>
+                <ul>
+                    <li>Cada AP é configurado individualmente</li>
+                    <li>Funciona independentemente</li>
+                    <li>Bom para redes pequenas (1-3 APs)</li>
+                    <li>Exemplo: roteador Wi-Fi doméstico</li>
+                </ul>
+
+                <h4>APs Gerenciados (Lightweight)</h4>
+                <ul>
+                    <li>APs são "burros" — precisam de um controlador</li>
+                    <li>Configuração centralizada no WLC</li>
+                    <li>Ideal para redes corporativas (dezenas/centenas de APs)</li>
+                    <li>Facilita gerenciamento, atualizações e roaming</li>
+                </ul>
+
+                <h3>Conceitos Importantes</h3>
+
+                <h4>SSID (Service Set Identifier)</h4>
+                <p>O "nome" da rede que você vê ao procurar Wi-Fi. Pode haver múltiplos SSIDs no mesmo AP (ex: "Empresa" e "Visitantes").</p>
+
+                <h4>Canais</h4>
+                <p>Faixas de frequência usadas para transmissão. Escolher canais não sobrepostos reduz interferência.</p>
+
+                <h4>Roaming</h4>
+                <p>Capacidade de um dispositivo trocar de AP enquanto se move, mantendo a conexão. O ESS (mesmo SSID em múltiplos APs) permite roaming transparente.</p>
+
+                <h4>PoE (Power over Ethernet)</h4>
+                <p>Tecnologia que permite alimentar APs pelo próprio cabo de rede, simplificando a instalação (não precisa de tomada elétrica para cada AP).</p>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático: Rede de Escritório
+                    </div>
+                    <p>Escritório com 3 andares e 200 funcionários:</p>
+                    <ul>
+                        <li><strong>15 APs:</strong> 5 por andar, estrategicamente posicionados</li>
+                        <li><strong>1 WLC:</strong> Gerencia todos os APs centralizadamente</li>
+                        <li><strong>2 SSIDs:</strong> "Corporativo" (autenticação 802.1X) e "Visitantes" (senha simples)</li>
+                        <li><strong>PoE:</strong> APs alimentados via switch PoE, sem tomadas extras</li>
+                        <li><strong>Roaming:</strong> Funcionários se movem entre andares sem perder conexão</li>
+                    </ul>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Arquitetura Wi-Fi: Estações (clientes), APs (criam a rede), WLC (gerencia múltiplos APs). APs autônomos = configurados individualmente (pequeno porte). APs gerenciados = controlados por WLC (corporativo). SSID é o nome da rede. Roaming permite trocar de AP sem desconectar. PoE alimenta APs pelo cabo de rede.</p>
+                </div>
+            </div>
+
+            <!-- Configuração de Rede Sem Fio -->
+            <div class="card" id="config-sem-fio">
+                <h2 class="card-title">
+                    <i class="fas fa-sliders-h"></i>
+                    Configuração de Rede Sem Fio
+                </h2>
+
+                <h3>🧠 Configuração Básica de um Roteador Wi-Fi</h3>
+                <p>Configurar corretamente seu roteador Wi-Fi garante segurança, desempenho e cobertura adequada. Veja os principais parâmetros:</p>
+
+                <h3>Acessando o Roteador</h3>
+                <ol>
+                    <li>Conecte-se ao roteador (cabo ou Wi-Fi padrão de fábrica)</li>
+                    <li>Abra o navegador e acesse o IP do gateway (geralmente 192.168.0.1 ou 192.168.1.1)</li>
+                    <li>Faça login (credenciais padrão estão no manual — MUDE DEPOIS!)</li>
+                </ol>
+
+                <h3>Configurações Essenciais</h3>
+
+                <h4>1. SSID (Nome da Rede)</h4>
+                <ul>
+                    <li>Escolha um nome único e identificável</li>
+                    <li>Evite informações pessoais (seu nome, endereço)</li>
+                    <li>Pode ocultar o SSID, mas não é segurança real (ferramentas detectam)</li>
+                </ul>
+
+                <h4>2. Segurança / Criptografia</h4>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Modo</th>
+                            <th>Segurança</th>
+                            <th>Recomendação</th>
+                        </tr>
+                        <tr>
+                            <td>Aberto</td>
+                            <td>Nenhuma</td>
+                            <td>❌ NUNCA usar</td>
+                        </tr>
+                        <tr>
+                            <td>WEP</td>
+                            <td>Muito fraca</td>
+                            <td>❌ Obsoleto</td>
+                        </tr>
+                        <tr>
+                            <td>WPA-PSK</td>
+                            <td>Fraca</td>
+                            <td>⚠️ Evitar</td>
+                        </tr>
+                        <tr>
+                            <td>WPA2-PSK (AES)</td>
+                            <td>Boa</td>
+                            <td>✅ Recomendado</td>
+                        </tr>
+                        <tr>
+                            <td>WPA3</td>
+                            <td>Excelente</td>
+                            <td>✅ Ideal (se disponível)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h4>3. Senha do Wi-Fi</h4>
+                <ul>
+                    <li>Mínimo 12 caracteres</li>
+                    <li>Misture letras maiúsculas, minúsculas, números e símbolos</li>
+                    <li>Evite palavras do dicionário ou sequências óbvias</li>
+                    <li>Exemplo bom: <code>M1nh@R3d3_S3gur@!</code></li>
+                </ul>
+
+                <h4>4. Canal de Transmissão</h4>
+                <p>Em <strong>2.4 GHz</strong>, use canais 1, 6 ou 11 (únicos que não se sobrepõem).</p>
+                <p>Em <strong>5 GHz</strong>, há mais opções — escolha um canal menos congestionado.</p>
+                <p>Muitos roteadores têm modo <strong>"Auto"</strong> que escolhe automaticamente.</p>
+                <div class="info-box tip">
+                    <div class="info-box-title">
+                        <i class="fas fa-check-circle"></i> Dica
+                    </div>
+                    <p>Use aplicativos como <strong>WiFi Analyzer</strong> (Android) para ver quais canais estão congestionados e escolher um menos utilizado.</p>
+                </div>
+
+                <h4>5. Largura do Canal (Channel Width)</h4>
+                <ul>
+                    <li><strong>20 MHz:</strong> Maior alcance, menor velocidade</li>
+                    <li><strong>40 MHz:</strong> Equilíbrio (comum em 2.4 GHz)</li>
+                    <li><strong>80/160 MHz:</strong> Maior velocidade (5 GHz)</li>
+                </ul>
+
+                <h4>6. Senha de Administração</h4>
+                <p><strong>SEMPRE</strong> altere a senha padrão de acesso às configurações do roteador! Deixar "admin/admin" é um risco enorme.</p>
+
+                <h3>Configurações Avançadas</h3>
+
+                <h4>Filtro de MAC</h4>
+                <p>Permite ou bloqueia dispositivos pelo endereço MAC. Adiciona uma camada de controle, mas não substitui senha forte (MACs podem ser falsificados).</p>
+
+                <h4>Guest Network (Rede de Visitantes)</h4>
+                <p>Cria uma rede separada para visitantes, isolada da sua rede principal. Protege seus dispositivos e compartilha internet com segurança.</p>
+
+                <h4>QoS (Quality of Service)</h4>
+                <p>Prioriza tráfego de determinados aplicativos (ex: videoconferência sobre downloads).</p>
+
+                <h4>Firmware</h4>
+                <p>Mantenha o firmware do roteador atualizado para correções de segurança.</p>
+
+                <div class="info-box example">
+                    <div class="info-box-title">
+                        <i class="fas fa-lightbulb"></i> Exemplo Prático: Configuração Doméstica
+                    </div>
+                    <div class="code-block">
+                        <code>
+      <span class="comment">Configuração recomendada:</span>
+            SSID: CasaDaSilva_5G
+            Segurança: WPA2-PSK (AES) ou WPA3
+            Senha: M1nh@C@s@_W1F1_2024!
+            Canal 2.4 GHz: 6 (ou Auto)
+            Canal 5 GHz: 36 ou Auto
+            Largura: 40 MHz (2.4) / 80 MHz (5)
+            Rede Guest: "Visitantes" com senha simples
+            Senha Admin: Alterada para algo forte
+                        </code>
+                    </div>
+                </div>
+
+                <div class="info-box summary">
+                    <div class="info-box-title">
+                        <i class="fas fa-clipboard-check"></i> Resumo
+                    </div>
+                    <p>Configuração Wi-Fi essencial: SSID único, WPA2/WPA3 com senha forte (12+ caracteres), canal pouco congestionado (1, 6 ou 11 em 2.4 GHz), largura adequada, e SEMPRE altere a senha de admin. Extras úteis: rede de visitantes isolada, QoS para priorização, e firmware atualizado.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="logo-text">Net<span>Blue</span></div>
+            </div>
+            <p>Curso Interativo de Redes de Computadores</p>
+            <p style="margin-top: 0.5rem;">Desenvolvido para aprendizado didático e profissional</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+<script src="curso.js"></script>
+</body>
+</html>
