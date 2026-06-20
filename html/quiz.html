@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Redes de Computadores</title>
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <link rel="stylesheet" href="../Css/quiz.css">
+    
+</head>
+<body>
+    <header class="navbar" id="topo">
+  <div class="container nav-container">
+
+    <!-- LOGO -->
+    <a href="../Html/index.html" class="brand">
+      <div class="logo-wrap">
+  <img src="../Image/logo.png" alt="Logo" class="logo-img">
+</div>
+
+      <div class="brand-text">
+        <strong>NetBlue</strong>
+        <span>Conectividade, redes e impacto educacional</span>
+      </div>
+    </a>
+
+    <!-- MENU MOBILE -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- LINKS -->
+    <nav class="nav-menu" id="navMenu">
+      <a href="../Html/index.html">Início</a>
+      <a href="#">Curso</a>
+      <a href="../Html/curso.html">Conhecimentos Gerais</a>
+    </nav>
+
+  </div>
+</header>
+
+    <div class="page">
+        <div class="header">
+            <div class="badge">
+                <i class="fas fa-flask"></i>
+                Quiz Interativo
+            </div>
+            <h1>Quiz de Redes de Computadores</h1>
+            <p class="subtitle">
+                Teste seus conhecimentos sobre fundamentos, IP, Wi-Fi, cabeamento e configuração de redes.
+            </p>
+        </div>
+
+        <div class="quiz-container" id="quizContainer"></div>
+    </div>
+    <script src="../JavaScript/quiz.js"></script>
+</body>
+</html>
