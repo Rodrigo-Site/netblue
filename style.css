@@ -128,7 +128,9 @@ a {
   font-size: 1.3rem;
   background: linear-gradient(90deg, #ffffff, #8fe7ff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
  
 .brand-text span {
