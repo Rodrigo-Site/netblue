@@ -7,6 +7,9 @@
   <meta
     name="description"
     content="NetBlue é um projeto sobre conectividade nas escolas públicas e conhecimentos gerais sobre redes."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
@@ -14,7 +17,7 @@
     <div class="container nav-container">
       <a href="#inicio" class="brand">
         <div class="logo-wrap">
-          <svg viewBox="0 0 140 80" class="logo-svg" xmlns="[w3.org](http://www.w3.org/2000/svg)">
+          <svg viewBox="0 0 140 80" class="logo-svg" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="whaleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#8ee8ff"/>
@@ -26,7 +29,7 @@
                 <stop offset="100%" stop-color="#7ce3ff"/>
               </linearGradient>
             </defs>
- 
+
             <ellipse cx="72" cy="42" rx="34" ry="18" fill="url(#whaleGradient)" />
             <ellipse cx="49" cy="40" rx="12" ry="10" fill="url(#whaleGradient)" />
             <path d="M100 41 C114 29, 126 31, 118 49 C113 45, 108 43, 100 48 Z" fill="url(#whaleGradient)" />
@@ -39,19 +42,19 @@
             <path d="M14 69 C31 64, 49 73, 69 67 C88 61, 108 70, 128 64" stroke="#9beeff" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
           </svg>
         </div>
- 
+
         <div class="brand-text">
           <strong>NetBlue</strong>
           <span>Conectividade, redes e impacto educacional</span>
         </div>
       </a>
- 
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
- 
+
       <nav class="nav-menu" id="navMenu">
         <a href="#inicio">Início</a>
         <a href="#problema">Problema</a>
@@ -62,12 +65,12 @@
       </nav>
     </div>
   </header>
- 
+
   <main>
     <section class="hero" id="inicio">
       <div class="hero-glow glow-left"></div>
       <div class="hero-glow glow-right"></div>
- 
+
       <div class="container hero-grid">
         <div class="hero-content reveal">
           <span class="hero-badge">Projeto de inclusão digital e infraestrutura escolar</span>
@@ -79,12 +82,12 @@
             e mostra, de forma clara e moderna, conhecimentos gerais sobre redes, conectividade
             e infraestrutura digital para ambientes educacionais.
           </p>
- 
+
           <div class="hero-actions">
             <a href="#projeto" class="btn btn-primary">Explorar projeto</a>
             <a href="#index-links" class="btn btn-secondary">Abrir Projeto</a>
           </div>
- 
+
           <div class="hero-mini-cards">
             <div class="mini-card">
               <strong>Conectividade</strong>
@@ -100,49 +103,45 @@
             </div>
           </div>
         </div>
- 
+
         <div class="hero-visual reveal">
           <div class="network-visual" id="networkVisual">
             <div class="ring ring-1"></div>
             <div class="ring ring-2"></div>
             <div class="ring ring-3"></div>
- 
+
             <div class="node node-1"></div>
             <div class="node node-2"></div>
             <div class="node node-3"></div>
             <div class="node node-4"></div>
             <div class="node node-5"></div>
             <div class="node node-6"></div>
- 
+
             <div class="center-core">
               <span>NET</span>
             </div>
           </div>
         </div>
       </div>
- 
     </section>
- 
+
     <section class="stats-section">
       <div class="container stats-grid reveal">
-        <div class="stat-card tilt-card">
+        <div class="stat-card">
           <h3>Educação</h3>
           <p>Internet melhora pesquisa, acesso a conteúdo e ferramentas digitais.</p>
-          <div class="card-shine"></div>
         </div>
-        <div class="stat-card tilt-card">
+        <div class="stat-card">
           <h3>Infraestrutura</h3>
           <p>Uma rede organizada permite estabilidade, alcance e melhor uso da conexão.</p>
-          <div class="card-shine"></div>
         </div>
-        <div class="stat-card tilt-card">
+        <div class="stat-card">
           <h3>Inclusão</h3>
           <p>Conectividade também significa ampliar oportunidades para estudantes e professores.</p>
-          <div class="card-shine"></div>
         </div>
       </div>
     </section>
- 
+
     <section class="section section-dark" id="problema">
       <div class="container section-grid reverse">
         <div class="section-copy reveal">
@@ -158,8 +157,8 @@
             e até a aplicação de metodologias mais modernas de ensino.
           </p>
         </div>
- 
-        <div class="section-panel tilt-card reveal">
+
+        <div class="section-panel reveal">
           <div class="panel-icon">!</div>
           <h3>Principais dificuldades</h3>
           <ul>
@@ -169,11 +168,10 @@
             <li>Dificuldade de acesso a plataformas educacionais</li>
             <li>Limitação no uso de recursos digitais em sala</li>
           </ul>
-          <div class="card-shine"></div>
         </div>
       </div>
     </section>
- 
+
     <section class="section section-gradient" id="projeto">
       <div class="container">
         <div class="section-header reveal">
@@ -185,41 +183,38 @@
             sobre redes, sempre com foco na melhoria da qualidade da educação pública.
           </p>
         </div>
- 
+
         <div class="card-grid three-cols">
-          <article class="glass-card tilt-card reveal">
+          <article class="glass-card reveal">
             <div class="card-icon">01</div>
             <h3>Apresentar o cenário</h3>
             <p>
               Mostrar de forma clara como a falta de internet impacta o cotidiano das escolas públicas
               e limita o potencial de ensino e aprendizagem.
             </p>
-            <div class="card-shine"></div>
           </article>
- 
-          <article class="glass-card tilt-card reveal">
+
+          <article class="glass-card reveal">
             <div class="card-icon">02</div>
             <h3>Explicar redes de forma acessível</h3>
             <p>
               Introduzir conceitos básicos sobre conectividade, Wi-Fi, equipamentos e estrutura
               de rede sem complicação desnecessária.
             </p>
-            <div class="card-shine"></div>
           </article>
- 
-          <article class="glass-card tilt-card reveal">
+
+          <article class="glass-card reveal">
             <div class="card-icon">03</div>
             <h3>Valorizar a transformação digital</h3>
             <p>
               Reforçar que infraestrutura de internet e conhecimento tecnológico são partes essenciais
               para uma escola mais preparada para o presente e para o futuro.
             </p>
-            <div class="card-shine"></div>
           </article>
         </div>
       </div>
     </section>
- 
+
     <section class="section section-dark" id="conhecimento">
       <div class="container">
         <div class="section-header reveal">
@@ -228,77 +223,85 @@
           <div class="divider"></div>
           <p>
             Esses conceitos ajudam a entender como funciona a internet dentro de uma escola
-            e por que a organização da rede faz diferença.
+            e por que a organização da rede faz diferença. Arraste ou use as setas para navegar.
           </p>
         </div>
- 
-        <div class="card-grid three-cols">
-          <article class="glass-card tilt-card reveal">
-            <div class="emoji-icon">🌐</div>
-            <h3>O que é uma rede</h3>
-            <p>
-              Uma rede conecta dispositivos para troca de dados, acesso a sistemas,
-              internet e compartilhamento de recursos.
-            </p>
-            <div class="card-shine"></div>
-          </article>
- 
-          <article class="glass-card tilt-card reveal">
-            <div class="emoji-icon">📡</div>
-            <h3>Como a internet chega</h3>
-            <p>
-              A conexão depende do provedor, do cabeamento, dos equipamentos e da forma
-              como o sinal é distribuído no ambiente.
-            </p>
-            <div class="card-shine"></div>
-          </article>
- 
-          <article class="glass-card tilt-card reveal">
-            <div class="emoji-icon">📶</div>
-            <h3>Wi-Fi e alcance</h3>
-            <p>
-              O sinal sem fio precisa de bom posicionamento, menos barreiras e planejamento
-              para atender espaços maiores.
-            </p>
-            <div class="card-shine"></div>
-          </article>
- 
-          <article class="glass-card tilt-card reveal">
-            <div class="emoji-icon">🖧</div>
-            <h3>Equipamentos principais</h3>
-            <p>
-              Modem, roteador, switch e access point fazem parte da estrutura básica
-              de uma rede funcional.
-            </p>
-            <div class="card-shine"></div>
-          </article>
- 
-          <article class="glass-card tilt-card reveal">
-            <div class="emoji-icon">⚡</div>
-            <h3>Estabilidade e desempenho</h3>
-            <p>
-              Não basta ter internet disponível; ela precisa ser estável e suficiente
-              para vários acessos ao mesmo tempo.
-            </p>
-            <div class="card-shine"></div>
-          </article>
- 
-          <article class="glass-card tilt-card reveal">
-            <div class="emoji-icon">🔒</div>
-            <h3>Segurança básica</h3>
-            <p>
-              Redes escolares precisam de organização, controle de acesso e boas práticas
-              para manter o ambiente digital mais seguro.
-            </p>
-            <div class="card-shine"></div>
-          </article>
+
+        <div class="carousel reveal" id="fundamentosCarousel">
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="fundamentosTrack">
+              <article class="glass-card carousel-slide">
+                <div class="emoji-icon">🌐</div>
+                <h3>O que é uma rede</h3>
+                <p>
+                  Uma rede conecta dispositivos para troca de dados, acesso a sistemas,
+                  internet e compartilhamento de recursos.
+                </p>
+              </article>
+
+              <article class="glass-card carousel-slide">
+                <div class="emoji-icon">📡</div>
+                <h3>Como a internet chega</h3>
+                <p>
+                  A conexão depende do provedor, do cabeamento, dos equipamentos e da forma
+                  como o sinal é distribuído no ambiente.
+                </p>
+              </article>
+
+              <article class="glass-card carousel-slide">
+                <div class="emoji-icon">📶</div>
+                <h3>Wi-Fi e alcance</h3>
+                <p>
+                  O sinal sem fio precisa de bom posicionamento, menos barreiras e planejamento
+                  para atender espaços maiores.
+                </p>
+              </article>
+
+              <article class="glass-card carousel-slide">
+                <div class="emoji-icon">🖧</div>
+                <h3>Equipamentos principais</h3>
+                <p>
+                  Modem, roteador, switch e access point fazem parte da estrutura básica
+                  de uma rede funcional.
+                </p>
+              </article>
+
+              <article class="glass-card carousel-slide">
+                <div class="emoji-icon">⚡</div>
+                <h3>Estabilidade e desempenho</h3>
+                <p>
+                  Não basta ter internet disponível; ela precisa ser estável e suficiente
+                  para vários acessos ao mesmo tempo.
+                </p>
+              </article>
+
+              <article class="glass-card carousel-slide">
+                <div class="emoji-icon">🔒</div>
+                <h3>Segurança básica</h3>
+                <p>
+                  Redes escolares precisam de organização, controle de acesso e boas práticas
+                  para manter o ambiente digital mais seguro.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="carousel-arrow" id="carouselPrev" aria-label="Slide anterior">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="carousel-dots" id="carouselDots"></div>
+            <button class="carousel-arrow" id="carouselNext" aria-label="Próximo slide">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
- 
+
     <section class="section section-gradient" id="impacto">
       <div class="container impact-layout">
-        <div class="impact-main glass-card tilt-card reveal">
+        <div class="impact-main glass-card reveal">
           <span class="section-label">Impacto</span>
           <h2>Conectividade escolar gera oportunidade real</h2>
           <div class="divider left"></div>
@@ -310,31 +313,27 @@
             O NetBlue existe para mostrar que falar de rede, internet e infraestrutura escolar
             também é falar de qualidade de ensino e de futuro.
           </p>
-          <div class="card-shine"></div>
         </div>
- 
+
         <div class="impact-side">
-          <article class="glass-card tilt-card reveal">
+          <article class="glass-card reveal">
             <div class="card-icon">1</div>
             <p>Mais acesso a conteúdos e plataformas educacionais.</p>
-            <div class="card-shine"></div>
           </article>
- 
-          <article class="glass-card tilt-card reveal">
+
+          <article class="glass-card reveal">
             <div class="card-icon">2</div>
             <p>Mais apoio para professores utilizarem recursos digitais.</p>
-            <div class="card-shine"></div>
           </article>
- 
-          <article class="glass-card tilt-card reveal">
+
+          <article class="glass-card reveal">
             <div class="card-icon">3</div>
             <p>Mais inclusão tecnológica e mais preparo para o futuro.</p>
-            <div class="card-shine"></div>
           </article>
         </div>
       </div>
     </section>
- 
+
     <section class="section section-dark" id="index-links">
       <div class="container">
         <div class="section-header reveal">
@@ -344,36 +343,33 @@
             Esta área foi mantida para conectar outras páginas, extensões ou sites relacionados ao NetBlue.
           </p>
         </div>
- 
+
         <div class="card-grid three-cols">
-          <a href="#" class="glass-card tilt-card link-card reveal">
+          <a href="#" class="glass-card link-card reveal">
             <div class="emoji-icon">🔗</div>
             <h3>Curso</h3>
             <p>Espaço reservado para outro site ou área do projeto.</p>
             <span class="link-pill">Adicionar link</span>
-            <div class="card-shine"></div>
           </a>
- 
-          <a href="../html/curso.html" class="glass-card tilt-card link-card reveal">
+
+          <a href="../html/curso.html" class="glass-card link-card reveal">
             <div class="emoji-icon">🔗</div>
             <h3>Conhecimentos Gerais</h3>
             <p>Espaço reservado para outro site ou área do projeto.</p>
             <span class="link-pill">Clique aqui</span>
-            <div class="card-shine"></div>
           </a>
- 
-          <a href="../html/quiz.html" class="glass-card tilt-card link-card reveal">
+
+          <a href="../html/quiz.html" class="glass-card link-card reveal">
             <div class="emoji-icon">🔗</div>
             <h3>Quiz</h3>
             <p>Espaço reservado para outro site ou área do projeto.</p>
             <span class="link-pill">Clique Aqui</span>
-            <div class="card-shine"></div>
           </a>
         </div>
       </div>
     </section>
   </main>
- 
+
   <footer class="footer">
     <div class="footer-top-line"></div>
     <div class="container footer-content">
@@ -383,7 +379,7 @@
           Projeto sobre conectividade nas escolas públicas e disseminação de conhecimentos gerais sobre redes.
         </p>
       </div>
- 
+
       <nav class="footer-nav">
         <a href="#inicio">Início</a>
         <a href="#problema">Problema</a>
@@ -393,12 +389,12 @@
         <a href="#index-links">Projetos</a>
       </nav>
     </div>
- 
+
     <div class="footer-bottom">
       <p>© NetBlue - Educação, conectividade e transformação digital.</p>
     </div>
   </footer>
- 
+
   <script src="../js/script.js"></script>
 </body>
 </html>
