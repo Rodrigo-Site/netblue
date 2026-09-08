@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso de Redes de Computadores | Aprenda do Zero</title>
-    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
-    <link rel="stylesheet" href="../css/curso.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/curso.css">
 </head>
 <body>
+
+    <!-- Barra de progresso de leitura -->
+    <div class="progress-bar" aria-hidden="true">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="../html/index.html" class="logo">
                 <div class="logo-icon">
-                    <img src="../imagem/banner.png" alt="Logo do Curso de Redes de Computadores" class="logo-img">
+                    <img src="../Image/logo.png" alt="Logo do Curso de Redes de Computadores" class="logo-img">
                 </div>
                 <div class="logo-text">Net<span>Blue</span></div>
             </a>
 
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item">
-                    <a href="#hero" class="nav-link"><i class="&nbsp;"></i>Início<i class="&nbsp;"></i>
-                    </a></a>
+                    <a href="#hero" class="nav-link">
+                        <i class="fas fa-house"></i> Início <span>&#8203;</span>
+                    </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-section="fundamentos">
                     <a href="#" class="nav-link">
                         <i class="fas fa-satellite-dish"></i> Fundamentos
                         <i class="fas fa-chevron-down"></i>
@@ -42,7 +49,7 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-section="dados-comunicacao">
                     <a href="#" class="nav-link">
                         <i class="fas fa-database"></i> Dados e Comunicação
                         <i class="fas fa-chevron-down"></i>
@@ -59,7 +66,7 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-section="configuracao-rede">
                     <a href="#" class="nav-link">
                         <i class="fas fa-cogs"></i> Configuração
                         <i class="fas fa-chevron-down"></i>
@@ -82,7 +89,7 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-section="infraestrutura">
                     <a href="#" class="nav-link">
                         <i class="fas fa-plug"></i> Infraestrutura
                         <i class="fas fa-chevron-down"></i>
@@ -105,7 +112,7 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-section="enderecamento-ip">
                     <a href="#" class="nav-link">
                         <i class="fas fa-globe"></i> Endereçamento IP
                         <i class="fas fa-chevron-down"></i>
@@ -116,7 +123,7 @@
                         </a>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-section="redes-sem-fio">
                     <a href="#" class="nav-link">
                         <i class="fas fa-wifi"></i> Redes Sem Fio
                         <i class="fas fa-chevron-down"></i>
@@ -144,12 +151,12 @@
                 </li>
                 <li class="nav-item">
                     <a href="../html/quiz.html" class="nav-link">
-                        <i class="fas fa-flask"></i> Quiz<i class="&nbsp;"></i>
+                        <i class="fas fa-flask"></i> Quiz <span>&#8203;</span>
                     </a>
                 </li>
             </ul>
 
-            <div class="mobile-toggle" id="mobileToggle">
+            <div class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -159,6 +166,51 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
+
+        <!-- Elemento de assinatura: pacotes de dados em trânsito entre cliente, switch, roteador e servidor -->
+        <div class="hero-network" aria-hidden="true">
+            <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+                <path data-path="a" class="hn-path" d="M 120 400 C 260 400, 260 260, 380 260" />
+                <path data-path="b" class="hn-path" d="M 380 260 C 480 260, 480 150, 560 150" />
+                <path data-path="c" class="hn-path" d="M 560 150 C 680 150, 680 90, 860 90" />
+                <path data-path="d" class="hn-path" d="M 380 260 C 480 260, 480 380, 620 400" />
+
+                <g class="hn-node">
+                    <circle cx="120" cy="400" r="26" />
+                    <text x="120" y="444" text-anchor="middle">CLIENTE</text>
+                </g>
+                <g class="hn-node">
+                    <circle cx="380" cy="260" r="26" />
+                    <text x="380" y="304" text-anchor="middle">SWITCH</text>
+                </g>
+                <g class="hn-node">
+                    <circle cx="560" cy="150" r="26" />
+                    <text x="560" y="194" text-anchor="middle">ROTEADOR</text>
+                </g>
+                <g class="hn-node">
+                    <circle cx="860" cy="90" r="26" />
+                    <text x="860" y="60" text-anchor="middle">INTERNET</text>
+                </g>
+                <g class="hn-node">
+                    <circle cx="620" cy="400" r="26" />
+                    <text x="620" y="444" text-anchor="middle">SERVIDOR</text>
+                </g>
+
+                <circle class="hn-packet" data-for="a" r="4">
+                    <animateMotion dur="3.2s" repeatCount="indefinite" path="M 120 400 C 260 400, 260 260, 380 260" />
+                </circle>
+                <circle class="hn-packet" data-for="b" r="4">
+                    <animateMotion dur="2.6s" repeatCount="indefinite" path="M 380 260 C 480 260, 480 150, 560 150" />
+                </circle>
+                <circle class="hn-packet" data-for="c" r="4">
+                    <animateMotion dur="3.4s" repeatCount="indefinite" path="M 560 150 C 680 150, 680 90, 860 90" />
+                </circle>
+                <circle class="hn-packet" data-for="d" r="4">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M 380 260 C 480 260, 480 380, 620 400" />
+                </circle>
+            </svg>
+        </div>
+
         <div class="hero-content">
             <div class="hero-badge">
                 <i class="fas fa-graduation-cap"></i>
@@ -170,7 +222,7 @@
                 <a href="#teoria-geral" class="btn btn-primary">
                     <i class="fas fa-play"></i> Começar Agora
                 </a>
-                <a href="#../html/quiz.html" class="btn btn-secondary">
+                <a href="../html/quiz.html" class="btn btn-secondary">
                     <i class="fas fa-flask"></i> Testar Conhecimentos
                 </a>
             </div>
@@ -193,9 +245,8 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        
+
         <!-- ==================== MÓDULO: FUNDAMENTOS ==================== -->
-<br><br><br>
         <section class="section" id="fundamentos">
             <div class="section-header">
                 <div class="section-icon">
@@ -2888,9 +2939,10 @@ Rede 192.168.1.0/24 → Broadcast: 192.168.1.255
     </footer>
 
     <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTop">
+    <div class="scroll-top" id="scrollTop" role="button" aria-label="Voltar ao topo" tabindex="0">
         <i class="fas fa-arrow-up"></i>
     </div>
+
 <script src="../js/curso.js"></script>
 </body>
 </html>
