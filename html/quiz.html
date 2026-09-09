@@ -3,56 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Quiz de Redes de Computadores</title>
-    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
     <link rel="stylesheet" href="../css/quiz.css">
-    
 </head>
+
 <body>
+
     <header class="navbar" id="topo">
-  <div class="container nav-container">
-    <a href="../html/index.html" class="brand">
-      <div class="logo-wrap">
-        <img src="../imagem/logo.png" alt="Logo" class="logo-img">
-      </div>
+        <div class="container nav-container">
 
-      <div class="brand-text">
-        <strong>NetBlue</strong><br>
-        <span>Conectividade, redes e impacto educacional</span>
-      </div>
-    </a>
+            <a href="../html/index.html" class="brand">
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+            <div class="logo-wrap">
+              <img src="../imagem/logo.png" alt="Logo NetBlue" class="logo-img">
+            </div>
 
-    <nav class="nav-menu" id="navMenu">
-      <a href="../html/index.html">Início</a>
-      <a href="#">Curso</a>
-      <a href="../html/curso.html">Conhecimentos Gerais</a>
-    </nav>
+                <div class="brand-text">
+                    <strong>NetBlue</strong>
+                    <span>Conectividade, redes e impacto educacional</span>
+                </div>
 
-  </div>
-</header>
-</header>
+            </a>
 
-    <div class="page">
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                type="button"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="../html/index.html">Início</a>
+                <a href="../html/video/html">Curso</a>
+                <a href="../html/curso.html">Conhecimentos Gerais</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="page">
+
         <div class="header">
+
             <div class="badge">
                 <i class="fas fa-flask"></i>
                 Quiz Interativo
             </div>
+
             <h1>Quiz de Redes de Computadores</h1>
+
             <p class="subtitle">
-                Teste seus conhecimentos sobre fundamentos, IP, Wi-Fi, cabeamento e configuração de redes.
+                Teste seus conhecimentos sobre fundamentos, IP, Wi-Fi,
+                cabeamento e configuração de redes.
             </p>
+
         </div>
 
         <div class="quiz-container" id="quizContainer"></div>
-    </div>
+
+    </main>
+
+
     <script src="../js/quiz.js"></script>
+
 </body>
 </html>
